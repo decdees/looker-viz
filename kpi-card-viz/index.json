@@ -1,0 +1,128 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "elements": [
+        {
+          "id": "metric",
+          "label": "Metric (Primary Value)",
+          "type": "METRIC",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "comparison",
+          "label": "Comparison Metric (optional, for % change)",
+          "type": "METRIC",
+          "options": { "min": 0, "max": 1 }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "cardStyle",
+      "label": "Card",
+      "elements": [
+        {
+          "id": "icon",
+          "label": "Icon",
+          "type": "SELECT_SINGLE",
+          "defaultValue": "trending-up",
+          "options": [
+            { "label": "Trending Up",     "value": "trending-up"    },
+            { "label": "Trending Down",   "value": "trending-down"  },
+            { "label": "Users",           "value": "users"          },
+            { "label": "Dollar Sign",     "value": "dollar-sign"    },
+            { "label": "Shopping Cart",   "value": "shopping-cart"  },
+            { "label": "Bar Chart",       "value": "bar-chart"      },
+            { "label": "Target",          "value": "target"         },
+            { "label": "Zap",             "value": "zap"            },
+            { "label": "Eye",             "value": "eye"            },
+            { "label": "Mail",            "value": "mail"           },
+            { "label": "Star",            "value": "star"           },
+            { "label": "Activity",        "value": "activity"       },
+            { "label": "Percent",         "value": "percent"        },
+            { "label": "Package",         "value": "package"        },
+            { "label": "Credit Card",     "value": "credit-card"    },
+            { "label": "Globe",           "value": "globe"          },
+            { "label": "Clock",           "value": "clock"          },
+            { "label": "Mouse Pointer",   "value": "mouse-pointer"  }
+          ]
+        },
+        {
+          "id": "iconColor",
+          "label": "Icon Color",
+          "type": "FILL",
+          "defaultValue": { "color": "2563EB" }
+        },
+        {
+          "id": "iconBg",
+          "label": "Icon Background",
+          "type": "FILL",
+          "defaultValue": { "color": "DBEAFE" }
+        },
+        {
+          "id": "cardBg",
+          "label": "Card Background",
+          "type": "FILL",
+          "defaultValue": { "color": "FFFFFF" }
+        },
+        {
+          "id": "borderColor",
+          "label": "Border Color",
+          "type": "FILL",
+          "defaultValue": { "color": "E5E7EB" }
+        }
+      ]
+    },
+    {
+      "id": "textStyle",
+      "label": "Text",
+      "elements": [
+        {
+          "id": "metricColor",
+          "label": "Metric Value Color",
+          "type": "FILL",
+          "defaultValue": { "color": "111827" }
+        },
+        {
+          "id": "labelColor",
+          "label": "Label Color",
+          "type": "FILL",
+          "defaultValue": { "color": "6B7280" }
+        },
+        {
+          "id": "compactNumbers",
+          "label": "Compact Numbers (e.g. 1.2M instead of 1,200,000)",
+          "type": "CHECKBOX",
+          "defaultValue": "true"
+        }
+      ]
+    },
+    {
+      "id": "changeStyle",
+      "label": "Change Badge",
+      "elements": [
+        {
+          "id": "positiveColor",
+          "label": "Positive Color",
+          "type": "FILL",
+          "defaultValue": { "color": "059669" }
+        },
+        {
+          "id": "negativeColor",
+          "label": "Negative Color",
+          "type": "FILL",
+          "defaultValue": { "color": "DC2626" }
+        },
+        {
+          "id": "invertChange",
+          "label": "Invert good/bad direction (for cost metrics like CAC)",
+          "type": "CHECKBOX",
+          "defaultValue": "false"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Combo Chart",
+  "organization": "Custom",
+  "description": "A modern combo chart with rounded bars (left axis) and a smooth line (right axis), dual Y-axes, gradient fill, and hover tooltips.",
+  "logoUrl": "https://storage.googleapis.com/community-visualizations-codelabs/barchart/bar_chart.png",
+  "organizationUrl": "",
+  "supportUrl": "",
+  "privacyPolicyUrl": "",
+  "termsOfServiceUrl": "",
+  "packageUrl": "",
+  "devMode": false,
+  "components": [
+    {
+      "id": "combo-chart",
+      "name": "Combo Chart",
+      "description": "Bar + Line combo chart with dual Y-axes, smooth bezier line, area fill, and hover tooltips",
+      "iconUrl": "https://storage.googleapis.com/community-visualizations-codelabs/barchart/bar_chart.png",
+      "resource": {
+        "js":     "https://decdees.github.io/looker-viz/combo-chart-viz/index.js",
+        "config": "https://decdees.github.io/looker-viz/combo-chart-viz/index.json",
+        "css":    "https://decdees.github.io/looker-viz/combo-chart-viz/index.css"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "KPI Card",
+  "organization": "Custom",
+  "description": "A modern KPI card with icon, metric value, label, and period comparison.",
+  "logoUrl": "https://storage.googleapis.com/community-visualizations-codelabs/barchart/bar_chart.png",
+  "organizationUrl": "",
+  "supportUrl": "",
+  "privacyPolicyUrl": "",
+  "termsOfServiceUrl": "",
+  "packageUrl": "",
+  "devMode": false,
+  "components": [
+    {
+      "id": "kpi-card",
+      "name": "KPI Card",
+      "description": "Modern KPI card with icon, metric value, and trend comparison",
+      "iconUrl": "https://storage.googleapis.com/community-visualizations-codelabs/table/table_icon.png",
+      "resource": {
+        "js":     "https://decdees.github.io/looker-viz/kpi-card-viz/index.js",
+        "config": "https://decdees.github.io/looker-viz/kpi-card-viz/index.json",
+        "css":    "https://decdees.github.io/looker-viz/kpi-card-viz/index.css"
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "elements": [
+        {
+          "id": "dimension",
+          "label": "Dimension (X Axis)",
+          "type": "DIMENSION",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "barMetric",
+          "label": "Bar Metric (left axis)",
+          "type": "METRIC",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "lineMetric",
+          "label": "Line Metric (right axis)",
+          "type": "METRIC",
+          "options": { "min": 0, "max": 1 }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "seriesStyle",
+      "label": "Series",
+      "elements": [
+        {
+          "id": "barColor",
+          "label": "Bar Color",
+          "type": "FILL",
+          "defaultValue": { "color": "2563EB" }
+        },
+        {
+          "id": "lineColor",
+          "label": "Line Color",
+          "type": "FILL",
+          "defaultValue": { "color": "F59E0B" }
+        },
+        {
+          "id": "showLineFill",
+          "label": "Show area fill under line",
+          "type": "CHECKBOX",
+          "defaultValue": "true"
+        },
+        {
+          "id": "showDots",
+          "label": "Show dots on line",
+          "type": "CHECKBOX",
+          "defaultValue": "true"
+        },
+        {
+          "id": "showValues",
+          "label": "Show value labels on bars",
+          "type": "CHECKBOX",
+          "defaultValue": "false"
+        }
+      ]
+    },
+    {
+      "id": "cardStyle",
+      "label": "Card",
+      "elements": [
+        {
+          "id": "chartTitle",
+          "label": "Chart Title",
+          "type": "TEXTINPUT",
+          "defaultValue": ""
+        },
+        {
+          "id": "cardBg",
+          "label": "Card Background",
+          "type": "FILL",
+          "defaultValue": { "color": "FFFFFF" }
+        },
+        {
+          "id": "borderColor",
+          "label": "Border Color",
+          "type": "FILL",
+          "defaultValue": { "color": "E5E7EB" }
+        }
+      ]
+    },
+    {
+      "id": "axisStyle",
+      "label": "Axes & Grid",
+      "elements": [
+        {
+          "id": "gridColor",
+          "label": "Gridline Color",
+          "type": "FILL",
+          "defaultValue": { "color": "F3F4F6" }
+        },
+        {
+          "id": "axisTextColor",
+          "label": "Axis Label Color",
+          "type": "FILL",
+          "defaultValue": { "color": "6B7280" }
+        },
+        {
+          "id": "titleColor",
+          "label": "Title Color",
+          "type": "FILL",
+          "defaultValue": { "color": "111827" }
+        },
+        {
+          "id": "compactNumbers",
+          "label": "Compact Numbers (e.g. 1.2M instead of 1,200,000)",
+          "type": "CHECKBOX",
+          "defaultValue": "true"
+        }
+      ]
+    }
+  ]
+}

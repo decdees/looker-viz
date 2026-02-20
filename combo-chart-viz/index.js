@@ -268,7 +268,9 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     if (chartW < 20 || chartH < 20 || labels.length === 0) return;
 
     var n    = labels.length;
-    var FONT = '11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    var FONT = '11px "Plus Jakarta Sans", system-ui, sans-serif';
+
+    function doDraw() {
 
     // ── Left Y axis gridlines + labels (bars) ──────────────────────────────
     ctx.font = FONT;
@@ -321,7 +323,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
       // Value labels on bars
       if (showValues && bh > 0) {
-        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        ctx.font = '10px "Plus Jakarta Sans", system-ui, sans-serif';
         ctx.textAlign = 'center';
         if (barLabelInside && bh > 18) {
           ctx.fillStyle    = '#FFFFFF';
@@ -388,7 +390,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
       // ── Line data labels ─────────────────────────────────────────────────
       if (showValues) {
-        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        ctx.font = '10px "Plus Jakarta Sans", system-ui, sans-serif';
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'bottom';
         ctx.fillStyle    = lineColor;
@@ -494,7 +496,14 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       octx.clearRect(0, 0, cw, ch);
       lastIdx = -1;
     });
-  }
+    } // end doDraw
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(doDraw);
+    } else {
+      doDraw();
+    }
+  } // end drawViz
 
   // ─── Subscribe ─────────────────────────────────────────────────────────────
   dscc.subscribeToData(drawViz, { transform: dscc.tableTransform });

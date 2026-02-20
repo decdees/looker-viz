@@ -257,7 +257,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
     var leftPad   = 52;
     var rightPad  = hasLine ? 52 : 16;
-    var topPad    = 10;
+    var topPad    = showValues ? 20 : 10;
     var bottomPad = 38;
     var chartX    = leftPad;
     var chartY    = topPad;
@@ -377,6 +377,18 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
           ctx.fillStyle = lineColor;
           ctx.fill();
         }
+      }
+
+      // ── Line data labels ─────────────────────────────────────────────────
+      if (showValues) {
+        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle    = lineColor;
+        for (var li = 0; li < pts.length; li++) {
+          ctx.fillText(formatNumber(lineValues[li], compact), pts[li].x, pts[li].y - 8);
+        }
+        ctx.font = FONT;
       }
     }
 

@@ -68,15 +68,33 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
   function parseDate(raw) {
     if (raw == null) return null;
     var s = String(raw).trim();
-    if (/^\d{8}$/.test(s))        s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
-    if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g, '-');
-    var d = new Date(s + 'T00:00:00');
+    // YYYYMM  (e.g. 202501) → first of that month
+    if (/^\d{6}$/.test(s))        s = s.slice(0,4)+'-'+s.slice(4,6)+'-01';
+    // YYYYMMDD (e.g. 20250115)
+    else if (/^\d{8}$/.test(s))   s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
+    // YYYY/MM/DD
+    else if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g, '-');
+    // MM/DD/YYYY
+    else if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) {
+      var p = s.split('/');
+      s = p[2]+'-'+p[0]+'-'+p[1];
+    }
+    var d = new Date(s.length === 7 ? s + '-01' : s + (s.includes('T') ? '' : 'T00:00:00'));
+    if (!isNaN(d)) return d;
+    // Last-resort: let the browser try the raw value
+    d = new Date(raw);
     return isNaN(d) ? null : d;
+  }
+
+  function isMonthOnly(item) {
+    // Raw like "202501" (6-chars) means monthly granularity
+    return item && /^\d{6}$/.test(String(item.raw).trim());
   }
 
   function fmtDisplay(item) {
     if (!item) return '—';
     var d = item.date;
+    if (isMonthOnly(item)) return MONTHS[d.getMonth()] + ' ' + d.getFullYear();
     return pad2(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
   }
 

@@ -56,9 +56,19 @@
         },
         {
           "id": "showValues",
-          "label": "Show value labels on bars",
+          "label": "Show value labels",
           "type": "CHECKBOX",
           "defaultValue": "false"
+        },
+        {
+          "id": "barLabelPosition",
+          "label": "Bar Label Position",
+          "type": "SELECT_SINGLE",
+          "options": [
+            { "label": "Above bar", "value": "above" },
+            { "label": "Inside bar", "value": "inside" }
+          ],
+          "defaultValue": "above"
         }
       ]
     },

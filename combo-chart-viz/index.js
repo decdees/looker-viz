@@ -135,7 +135,8 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var compact       = !(s.compactNumbers && s.compactNumbers.value === false);
     var showLineFill  = !(s.showLineFill  && s.showLineFill.value  === false);
     var showDots      = !(s.showDots      && s.showDots.value      === false);
-    var showValues    = (s.showValues && s.showValues.value === true);
+    var showValues       = (s.showValues && s.showValues.value === true);
+    var barLabelInside   = (s.barLabelPosition && s.barLabelPosition.value === 'inside');
     var chartTitle    = (s.chartTitle && s.chartTitle.value) ? s.chartTitle.value : '';
     var barRadius     = 5;
 
@@ -320,11 +321,17 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
       // Value labels on bars
       if (showValues && bh > 0) {
-        ctx.fillStyle    = titleColor;
-        ctx.textAlign    = 'center';
-        ctx.textBaseline = 'bottom';
         ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-        ctx.fillText(formatNumber(barValues[bi], compact), bx + barWidth / 2, by - 2);
+        ctx.textAlign = 'center';
+        if (barLabelInside && bh > 18) {
+          ctx.fillStyle    = '#FFFFFF';
+          ctx.textBaseline = 'top';
+          ctx.fillText(formatNumber(barValues[bi], compact), bx + barWidth / 2, by + 4);
+        } else if (!barLabelInside) {
+          ctx.fillStyle    = titleColor;
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(formatNumber(barValues[bi], compact), bx + barWidth / 2, by - 2);
+        }
         ctx.font = FONT;
       }
 

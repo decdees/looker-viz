@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Data",
+      "elements": [
+        {
+          "id": "dimension",
+          "label": "Dimension (X axis)",
+          "type": "DIMENSION",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "barMetric",
+          "label": "Metric (Bar height)",
+          "type": "METRIC",
+          "options": { "min": 1, "max": 1 }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "barStyle",
+      "label": "Bar Chart",
+      "elements": [
+        {
+          "id": "chartTitle",
+          "label": "Chart Title",
+          "type": "TEXTINPUT",
+          "defaultValue": ""
+        },
+        {
+          "id": "barColor",
+          "label": "Bar Color",
+          "type": "FILL",
+          "defaultValue": { "color": "2563EB" }
+        },
+        {
+          "id": "showValues",
+          "label": "Show value labels",
+          "type": "CHECKBOX",
+          "defaultValue": false
+        },
+        {
+          "id": "compactNumbers",
+          "label": "Compact numbers (K/M/B)",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
+          "id": "cardBg",
+          "label": "Background",
+          "type": "FILL",
+          "defaultValue": { "color": "FFFFFF" }
+        },
+        {
+          "id": "borderColor",
+          "label": "Border Color",
+          "type": "FILL",
+          "defaultValue": { "color": "E5E7EB" }
+        },
+        {
+          "id": "gridColor",
+          "label": "Grid Color",
+          "type": "FILL",
+          "defaultValue": { "color": "F3F4F6" }
+        },
+        {
+          "id": "axisTextColor",
+          "label": "Axis Text Color",
+          "type": "FILL",
+          "defaultValue": { "color": "6B7280" }
+        },
+        {
+          "id": "titleColor",
+          "label": "Title / Label Color",
+          "type": "FILL",
+          "defaultValue": { "color": "111827" }
+        }
+      ]
+    }
+  ]
+}

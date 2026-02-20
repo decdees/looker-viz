@@ -25,13 +25,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
   \**********************/
 /*! no static exports found */function(e,R,t){"use strict";var C,n,E,r,o,N,i;Object.defineProperty(R,"__esModule",{value:!0}),(C=R.ConceptType||(R.ConceptType={})).METRIC="METRIC",C.DIMENSION="DIMENSION",(R.MessageType||(R.MessageType={})).RENDER="RENDER",(n=R.FieldType||(R.FieldType={})).YEAR="YEAR",n.YEAR_QUARTER="YEAR_QUARTER",n.YEAR_MONTH="YEAR_MONTH",n.YEAR_WEEK="YEAR_WEEK",n.YEAR_MONTH_DAY="YEAR_MONTH_DAY",n.YEAR_MONTH_DAY_HOUR="YEAR_MONTH_DAY_HOUR",n.QUARTER="QUARTER",n.MONTH="MONTH",n.WEEK="WEEK",n.MONTH_DAY="MONTH_DAY",n.DAY_OF_WEEK="DAY_OF_WEEK",n.DAY="DAY",n.HOUR="HOUR",n.MINUTE="MINUTE",n.DURATION="DURATION",n.COUNTRY="COUNTRY",n.COUNTRY_CODE="COUNTRY_CODE",n.CONTINENT="CONTINENT",n.CONTINENT_CODE="CONTINENT_CODE",n.SUB_CONTINENT="SUB_CONTINENT",n.SUB_CONTINENT_CODE="SUB_CONTINENT_CODE",n.REGION="REGION",n.REGION_CODE="REGION_CODE",n.CITY="CITY",n.CITY_CODE="CITY_CODE",n.METRO_CODE="METRO_CODE",n.LATITUDE_LONGITUDE="LATITUDE_LONGITUDE",n.NUMBER="NUMBER",n.PERCENT="PERCENT",n.TEXT="TEXT",n.BOOLEAN="BOOLEAN",n.URL="URL",n.IMAGE="IMAGE",n.CURRENCY_AED="CURRENCY_AED",n.CURRENCY_ALL="CURRENCY_ALL",n.CURRENCY_ARS="CURRENCY_ARS",n.CURRENCY_AUD="CURRENCY_AUD",n.CURRENCY_BDT="CURRENCY_BDT",n.CURRENCY_BGN="CURRENCY_BGN",n.CURRENCY_BOB="CURRENCY_BOB",n.CURRENCY_BRL="CURRENCY_BRL",n.CURRENCY_CAD="CURRENCY_CAD",n.CURRENCY_CDF="CURRENCY_CDF",n.CURRENCY_CHF="CURRENCY_CHF",n.CURRENCY_CLP="CURRENCY_CLP",n.CURRENCY_CNY="CURRENCY_CNY",n.CURRENCY_COP="CURRENCY_COP",n.CURRENCY_CRC="CURRENCY_CRC",n.CURRENCY_CZK="CURRENCY_CZK",n.CURRENCY_DKK="CURRENCY_DKK",n.CURRENCY_DOP="CURRENCY_DOP",n.CURRENCY_EGP="CURRENCY_EGP",n.CURRENCY_ETB="CURRENCY_ETB",n.CURRENCY_EUR="CURRENCY_EUR",n.CURRENCY_GBP="CURRENCY_GBP",n.CURRENCY_HKD="CURRENCY_HKD",n.CURRENCY_HRK="CURRENCY_HRK",n.CURRENCY_HUF="CURRENCY_HUF",n.CURRENCY_IDR="CURRENCY_IDR",n.CURRENCY_ILS="CURRENCY_ILS",n.CURRENCY_INR="CURRENCY_INR",n.CURRENCY_IRR="CURRENCY_IRR",n.CURRENCY_ISK="CURRENCY_ISK",n.CURRENCY_JMD="CURRENCY_JMD",n.CURRENCY_JPY="CURRENCY_JPY",n.CURRENCY_KRW="CURRENCY_KRW",n.CURRENCY_LKR="CURRENCY_LKR",n.CURRENCY_LTL="CURRENCY_LTL",n.CURRENCY_MNT="CURRENCY_MNT",n.CURRENCY_MVR="CURRENCY_MVR",n.CURRENCY_MXN="CURRENCY_MXN",n.CURRENCY_MYR="CURRENCY_MYR",n.CURRENCY_NOK="CURRENCY_NOK",n.CURRENCY_NZD="CURRENCY_NZD",n.CURRENCY_PAB="CURRENCY_PAB",n.CURRENCY_PEN="CURRENCY_PEN",n.CURRENCY_PHP="CURRENCY_PHP",n.CURRENCY_PKR="CURRENCY_PKR",n.CURRENCY_PLN="CURRENCY_PLN",n.CURRENCY_RON="CURRENCY_RON",n.CURRENCY_RSD="CURRENCY_RSD",n.CURRENCY_RUB="CURRENCY_RUB",n.CURRENCY_SAR="CURRENCY_SAR",n.CURRENCY_SEK="CURRENCY_SEK",n.CURRENCY_SGD="CURRENCY_SGD",n.CURRENCY_THB="CURRENCY_THB",n.CURRENCY_TRY="CURRENCY_TRY",n.CURRENCY_TWD="CURRENCY_TWD",n.CURRENCY_TZS="CURRENCY_TZS",n.CURRENCY_UAH="CURRENCY_UAH",n.CURRENCY_USD="CURRENCY_USD",n.CURRENCY_UYU="CURRENCY_UYU",n.CURRENCY_VEF="CURRENCY_VEF",n.CURRENCY_VND="CURRENCY_VND",n.CURRENCY_YER="CURRENCY_YER",n.CURRENCY_ZAR="CURRENCY_ZAR",(E=R.TableType||(R.TableType={})).DEFAULT="DEFAULT",E.COMPARISON="COMPARISON",E.SUMMARY="SUMMARY",(r=R.DateRangeType||(R.DateRangeType={})).DEFAULT="DEFAULT",r.COMPARISON="COMPARISON",(o=R.ConfigDataElementType||(R.ConfigDataElementType={})).METRIC="METRIC",o.DIMENSION="DIMENSION",o.MAX_RESULTS="MAX_RESULTS",(N=R.ConfigStyleElementType||(R.ConfigStyleElementType={})).TEXTINPUT="TEXTINPUT",N.SELECT_SINGLE="SELECT_SINGLE",N.CHECKBOX="CHECKBOX",N.FONT_COLOR="FONT_COLOR",N.FONT_SIZE="FONT_SIZE",N.FONT_FAMILY="FONT_FAMILY",N.FILL_COLOR="FILL_COLOR",N.BORDER_COLOR="BORDER_COLOR",N.AXIS_COLOR="AXIS_COLOR",N.GRID_COLOR="GRID_COLOR",N.OPACITY="OPACITY",N.LINE_WEIGHT="LINE_WEIGHT",N.LINE_STYLE="LINE_STYLE",N.BORDER_RADIUS="BORDER_RADIUS",N.INTERVAL="INTERVAL",N.SELECT_RADIO="SELECT_RADIO",(R.DSInteractionType||(R.DSInteractionType={})).FILTER="FILTER",(i=R.ToDSMessageType||(R.ToDSMessageType={})).VIZ_READY="vizReady",i.INTERACTION="vizAction",(R.InteractionType||(R.InteractionType={})).FILTER="FILTER"}},n.c=C,n.d=function(e,R,t){n.o(e,R)||Object.defineProperty(e,R,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(R,e){if(1&e&&(R=n(R)),8&e)return R;if(4&e&&"object"==typeof R&&R&&R.__esModule)return R;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:R}),2&e&&"string"!=typeof R)for(var C in R)n.d(t,C,function(e){return R[e]}.bind(null,C));return t},n.n=function(e){var R=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(R,"a",R),R},n.o=function(e,R){return Object.prototype.hasOwnProperty.call(e,R)},n.p="",n(n.s="./src/index.ts");function n(e){if(C[e])return C[e].exports;var R=C[e]={i:e,l:!1,exports:{}};return t[e].call(R.exports,R,R.exports,n),R.l=!0,R.exports}var t,C});/**
  * Date Range Filter - Looker Studio Community Visualization
- *
- * Features:
- *  - Reads actual data dates → only shows the available range
- *  - Dual-handle range slider (drag to select from/to)
- *  - Sends FILTER interaction to Looker Studio
- *  - Expands range memory across redraws so filtered data doesn't shrink the slider
- *  - Compact horizontal toolbar layout
+ * Compact horizontal toolbar: [📅 Title] [Jan 25] [←slider→] [Jan 26] [Reset] [Apply]
  */
 
 (function () {
@@ -39,15 +33,14 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-  // ── Module-level state (persists across drawViz calls) ──────────────────────
-  var allItems   = [];    // [{raw, date}] – full data range, only ever grows
+  // Module-level state — persists across drawViz calls within the same session
+  var allItems   = [];   // [{raw, date}] — only ever grows (survives filtered redraws)
   var fromIdx    = 0;
   var toIdx      = 0;
   var isFiltered = false;
-
-  // Cleanup refs for document-level event listeners
   var _mmHandler = null;
   var _muHandler = null;
+  var _fieldId   = null; // actual data-source field id for sendInteraction
 
   // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -69,52 +62,38 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
   function parseDate(raw) {
     if (raw == null) return null;
     var s = String(raw).trim();
-    // YYYYMM  (e.g. 202501) → first of that month
-    if (/^\d{6}$/.test(s))        s = s.slice(0,4)+'-'+s.slice(4,6)+'-01';
-    // YYYYMMDD (e.g. 20250115)
-    else if (/^\d{8}$/.test(s))   s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
-    // YYYY/MM/DD
-    else if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g, '-');
-    // MM/DD/YYYY
+    if (/^\d{6}$/.test(s))   s = s.slice(0,4)+'-'+s.slice(4,6)+'-01';
+    else if (/^\d{8}$/.test(s)) s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
+    else if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g,'-');
     else if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) {
-      var p = s.split('/');
-      s = p[2]+'-'+p[0]+'-'+p[1];
+      var p = s.split('/'); s = p[2]+'-'+p[0]+'-'+p[1];
     }
-    var d = new Date(s.length === 7 ? s + '-01' : s + (s.includes('T') ? '' : 'T00:00:00'));
+    var d = new Date(s + (s.length === 7 ? '-01' : '') + (s.includes('T') ? '' : 'T00:00:00'));
     if (!isNaN(d)) return d;
-    // Last-resort: let the browser try the raw value
-    d = new Date(raw);
-    return isNaN(d) ? null : d;
+    d = new Date(raw); return isNaN(d) ? null : d;
   }
 
-  function isMonthOnly(item) {
-    // Raw like "202501" (6-chars) means monthly granularity
-    return item && /^\d{6}$/.test(String(item.raw).trim());
-  }
-
-  function fmtDisplay(item) {
+  function fmtShort(item) {
     if (!item) return '—';
     var d = item.date;
-    if (isMonthOnly(item)) return MONTHS[d.getMonth()] + ' ' + d.getFullYear();
-    return pad2(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+    var mo = MONTHS[d.getMonth()];
+    var yr = String(d.getFullYear()).slice(2);
+    if (/^\d{6}$/.test(String(item.raw).trim())) return mo + ' \'' + yr;
+    return d.getDate() + ' ' + mo + ' \'' + yr;
   }
 
-  function pad2(n) { return String(n).padStart(2, '0'); }
-
-  // Polyfill for roundRect on canvas
   function roundRectPath(ctx, x, y, w, h, r) {
-    if (w < 2 * r) r = w / 2;
-    if (h < 2 * r) r = h / 2;
+    if (w < 2*r) r = w/2; if (h < 2*r) r = h/2;
     ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.arcTo(x + w, y,     x + w, y + h, r);
-    ctx.arcTo(x + w, y + h, x,     y + h, r);
-    ctx.arcTo(x,     y + h, x,     y,     r);
-    ctx.arcTo(x,     y,     x + w, y,     r);
+    ctx.moveTo(x+r, y);
+    ctx.arcTo(x+w, y, x+w, y+h, r);
+    ctx.arcTo(x+w, y+h, x, y+h, r);
+    ctx.arcTo(x, y+h, x, y, r);
+    ctx.arcTo(x, y, x+w, y, r);
     ctx.closePath();
   }
 
-  // ── Main draw ────────────────────────────────────────────────────────────────
+  // ── Main ─────────────────────────────────────────────────────────────────────
 
   function drawViz(data) {
     var s = data.style || {};
@@ -126,27 +105,32 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var muted     = getColor(s.mutedColor,   '#6B7280');
     var title     = (s.filterTitle && s.filterTitle.value) || 'Date Range Filter';
 
-    // ── Parse data ────────────────────────────────────────────────────────────
-    var table   = data.tables.DEFAULT;
+    var table   = (data.tables || {}).DEFAULT || {};
     var headers = table.headers || [];
     var rows    = table.rows    || [];
 
+    // Find dimension column
     var dimIdx = 0;
     for (var h = 0; h < headers.length; h++) {
       if (headers[h].configId === 'dateDimension') { dimIdx = h; break; }
     }
 
-    var seen  = {};
-    var items = [];
+    // Store the real field id for sendInteraction
+    if (headers[dimIdx] && headers[dimIdx].id) {
+      _fieldId = headers[dimIdx].id;
+    }
+
+    // Parse unique dates from current data
+    var seen = {}, items = [];
     for (var r = 0; r < rows.length; r++) {
       var raw = rows[r][dimIdx];
       if (raw == null || seen[raw]) continue;
       var d = parseDate(raw);
       if (d) { seen[raw] = true; items.push({ raw: raw, date: d }); }
     }
-    items.sort(function(a, b) { return a.date - b.date; });
+    items.sort(function(a,b){ return a.date - b.date; });
 
-    // ── Expand allItems FIRST (never shrink so slider survives filtered redraws)
+    // Expand allItems (never shrink — survive filtered redraws)
     if (items.length > 0) {
       if (allItems.length === 0) {
         allItems = items;
@@ -154,267 +138,207 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         toIdx    = allItems.length - 1;
       } else {
         var oldKeys = {};
-        allItems.forEach(function(i) { oldKeys[i.raw] = true; });
-        items.forEach(function(i) { if (!oldKeys[i.raw]) allItems.push(i); });
-        allItems.sort(function(a, b) { return a.date - b.date; });
+        allItems.forEach(function(i){ oldKeys[i.raw] = true; });
+        items.forEach(function(i){ if (!oldKeys[i.raw]) allItems.push(i); });
+        allItems.sort(function(a,b){ return a.date - b.date; });
         fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
         toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
       }
     }
 
-    // Only show empty state if we have NO data at all (dimension not configured)
     if (allItems.length === 0) {
       renderEmpty(cardBg, border, textColor, title);
       return;
     }
 
-    var filterInteraction = (data.interactions || {}).dateFilter || null;
-
-    buildUI(primary, cardBg, border, textColor, muted, title, filterInteraction);
+    var interaction = (data.interactions || {}).dateFilter || null;
+    buildUI(primary, cardBg, border, textColor, muted, title, interaction);
   }
 
   // ── UI ───────────────────────────────────────────────────────────────────────
 
-  function buildUI(primary, cardBg, border, textColor, muted, title, filterInteraction) {
-    // Clean up stale document listeners
+  function buildUI(primary, cardBg, border, textColor, muted, title, interaction) {
     if (_mmHandler) { document.removeEventListener('mousemove', _mmHandler); _mmHandler = null; }
     if (_muHandler) { document.removeEventListener('mouseup',   _muHandler); _muHandler = null; }
 
+    // Fill the entire iframe
+    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
+    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
+
     document.body.innerHTML = '';
-    document.body.style.cssText = 'margin:0;padding:0;overflow:hidden;background:transparent;';
 
-    // ── Outer card ────────────────────────────────────────────────────────────
-    var card = mk('div', [
-      'width:100%', 'height:100%', 'display:flex', 'flex-direction:column',
-      'background:' + cardBg,
-      'border:1px solid ' + border,
-      'border-radius:12px',
-      'box-shadow:0 1px 4px rgba(0,0,0,0.06)',
-      'padding:10px 16px 10px',
-      'box-sizing:border-box',
-      'overflow:hidden',
-      'justify-content:center'
-    ]);
+    // Card fills the viewport absolutely
+    var card = mk('div', {
+      position: 'absolute', inset: '0',
+      display: 'flex', flexDirection: 'column', justifyContent: 'center',
+      background: cardBg,
+      border: '1px solid ' + border,
+      borderRadius: '12px',
+      boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+      padding: '10px 16px',
+      boxSizing: 'border-box',
+      overflow: 'hidden',
+      fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif'
+    });
 
-    // ── Row 1: Title + badge ──────────────────────────────────────────────────
-    var titleRow = mk('div', ['display:flex','align-items:center','gap:6px','flex-shrink:0','margin-bottom:8px']);
+    // ── Row 1: Title + "Filtered" badge ──────────────────────────────────────
+    var row1 = mk('div', { display:'flex', alignItems:'center', gap:'6px', marginBottom:'8px', flexShrink:'0' });
 
-    var icon = mk('div', ['color:'+primary,'display:flex','flex-shrink:0']);
+    var icon = document.createElement('div');
+    icon.style.cssText = 'display:flex;flex-shrink:0;color:' + primary;
     icon.innerHTML = '<svg width="13" height="13" viewBox="0 0 14 14" fill="none">'
       + '<rect x="0.75" y="1.75" width="12.5" height="11.5" rx="1.75" stroke="'+primary+'" stroke-width="1.5"/>'
       + '<path d="M0.75 5.5h12.5" stroke="'+primary+'" stroke-width="1.5"/>'
       + '<path d="M4.5 0.5v2.5M9.5 0.5v2.5" stroke="'+primary+'" stroke-width="1.5" stroke-linecap="round"/>'
       + '</svg>';
 
-    var titleEl = mk('div', ['font-size:11px','font-weight:700','color:'+textColor,'letter-spacing:0.06em','text-transform:uppercase','flex:1']);
+    var titleEl = mk('div', { fontSize:'11px', fontWeight:'700', color:textColor, letterSpacing:'0.06em', textTransform:'uppercase', flex:'1' });
     titleEl.textContent = title;
 
-    var badge = mk('div', [
-      'font-size:10px','font-weight:600','padding:2px 7px','border-radius:20px',
-      'background:'+hexToRgba(primary, 0.12),'color:'+primary,
-      'flex-shrink:0',
-      'display:' + (isFiltered ? 'block' : 'none')
-    ]);
+    var badge = mk('div', {
+      fontSize:'10px', fontWeight:'600', padding:'2px 7px', borderRadius:'20px',
+      background: hexToRgba(primary, 0.12), color: primary,
+      flexShrink:'0', display: isFiltered ? 'block' : 'none'
+    });
     badge.textContent = 'Filtered';
 
-    titleRow.appendChild(icon);
-    titleRow.appendChild(titleEl);
-    titleRow.appendChild(badge);
-    card.appendChild(titleRow);
+    row1.appendChild(icon);
+    row1.appendChild(titleEl);
+    row1.appendChild(badge);
+    card.appendChild(row1);
 
-    // ── Row 2: [From label] [Slider] [To label] [Buttons] ────────────────────
-    var controlRow = mk('div', ['display:flex','align-items:center','gap:10px','flex:1','min-height:0','flex-shrink:0']);
+    // ── Row 2: [From] [Slider] [To] [Reset] [Apply] ──────────────────────────
+    var row2 = mk('div', { display:'flex', alignItems:'center', gap:'8px', flexShrink:'0' });
 
-    // From date label
-    var fromLbl = mk('div', [
-      'font-size:12px','font-weight:600','color:'+textColor,
-      'background:'+hexToRgba(primary, 0.06),
-      'border:1.5px solid '+hexToRgba(primary, 0.2),
-      'border-radius:7px','padding:5px 10px',
-      'white-space:nowrap','flex-shrink:0'
-    ]);
-    fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
+    function dateChip(text) {
+      var el = mk('div', {
+        fontSize:'12px', fontWeight:'600', color:textColor,
+        background: hexToRgba(primary, 0.06),
+        border: '1.5px solid ' + hexToRgba(primary, 0.2),
+        borderRadius:'7px', padding:'4px 10px',
+        whiteSpace:'nowrap', flexShrink:'0'
+      });
+      el.textContent = text;
+      return el;
+    }
 
-    // Slider wrapper (flex:1)
-    var sliderWrap = mk('div', ['flex:1','position:relative','min-width:60px','height:36px']);
+    var fromChip = dateChip(fmtShort(allItems[fromIdx]));
+    var toChip   = dateChip(fmtShort(allItems[toIdx]));
 
-    // To date label
-    var toLbl = mk('div', [
-      'font-size:12px','font-weight:600','color:'+textColor,
-      'background:'+hexToRgba(primary, 0.06),
-      'border:1.5px solid '+hexToRgba(primary, 0.2),
-      'border-radius:7px','padding:5px 10px',
-      'white-space:nowrap','flex-shrink:0'
-    ]);
-    toLbl.textContent = fmtDisplay(allItems[toIdx]);
+    var sliderWrap = mk('div', { flex:'1', position:'relative', minWidth:'60px', height:'32px', flexShrink:'1' });
 
-    // Buttons
-    var resetBtn = mk('button', [
-      'font-size:11px','font-weight:500','padding:5px 11px','border-radius:7px',
-      'border:1.5px solid '+border,'background:transparent','color:'+muted,
-      'cursor:pointer','font-family:inherit','flex-shrink:0','white-space:nowrap'
-    ]);
+    var resetBtn = mk('button', {
+      fontSize:'11px', fontWeight:'500', padding:'5px 10px', borderRadius:'7px',
+      border:'1.5px solid '+border, background:'transparent', color:muted,
+      cursor:'pointer', fontFamily:'inherit', flexShrink:'0', whiteSpace:'nowrap'
+    });
     resetBtn.textContent = 'Reset';
 
-    var applyBtn = mk('button', [
-      'font-size:11px','font-weight:600','padding:5px 13px','border-radius:7px',
-      'border:none','background:'+primary,'color:#FFFFFF',
-      'cursor:pointer','font-family:inherit','flex-shrink:0','white-space:nowrap',
-      'box-shadow:0 1px 4px '+hexToRgba(primary, 0.35)
-    ]);
+    var applyBtn = mk('button', {
+      fontSize:'11px', fontWeight:'600', padding:'5px 13px', borderRadius:'7px',
+      border:'none', background:primary, color:'#FFFFFF',
+      cursor:'pointer', fontFamily:'inherit', flexShrink:'0', whiteSpace:'nowrap',
+      boxShadow:'0 1px 4px ' + hexToRgba(primary, 0.35)
+    });
     applyBtn.textContent = 'Apply';
 
-    controlRow.appendChild(fromLbl);
-    controlRow.appendChild(sliderWrap);
-    controlRow.appendChild(toLbl);
-    controlRow.appendChild(resetBtn);
-    controlRow.appendChild(applyBtn);
-    card.appendChild(controlRow);
+    row2.appendChild(fromChip);
+    row2.appendChild(sliderWrap);
+    row2.appendChild(toChip);
+    row2.appendChild(resetBtn);
+    row2.appendChild(applyBtn);
+    card.appendChild(row2);
 
     document.body.appendChild(card);
 
-    // ── Build canvas slider (after layout) ────────────────────────────────────
+    // ── Canvas slider ─────────────────────────────────────────────────────────
     requestAnimationFrame(function () {
       var sw  = sliderWrap.offsetWidth  || 200;
-      var sh  = sliderWrap.offsetHeight || 36;
+      var sh  = sliderWrap.offsetHeight || 32;
       var dpr = window.devicePixelRatio || 1;
 
-      var canvas = document.createElement('canvas');
-      canvas.width  = sw * dpr;
-      canvas.height = sh * dpr;
-      canvas.style.cssText = 'position:absolute;top:0;left:0;width:'+sw+'px;height:'+sh+'px;cursor:grab';
-      sliderWrap.appendChild(canvas);
+      var cv = document.createElement('canvas');
+      cv.width  = sw * dpr; cv.height = sh * dpr;
+      cv.style.cssText = 'position:absolute;top:0;left:0;width:'+sw+'px;height:'+sh+'px;cursor:grab;';
+      sliderWrap.appendChild(cv);
 
-      var ctx = canvas.getContext('2d');
+      var ctx = cv.getContext('2d');
       ctx.scale(dpr, dpr);
 
-      var THUMB_R = 8;
-      var TL      = THUMB_R + 4;
-      var TW      = sw - THUMB_R * 2 - 8;
-      var TY      = sh / 2;
-      var TH      = 5;
-      var n       = allItems.length;
+      var R  = 8, TL = R+4, TW = sw - R*2 - 8, TY = sh/2, TH = 5, n = allItems.length;
 
-      function idxToX(i) {
-        return TL + (i / Math.max(n - 1, 1)) * TW;
-      }
-      function xToIdx(x) {
-        var t = (x - TL) / TW;
-        return Math.round(Math.max(0, Math.min(1, t)) * (n - 1));
-      }
+      function ix2x(i) { return TL + (i / Math.max(n-1,1)) * TW; }
+      function x2ix(x) { return Math.round(Math.max(0,Math.min(1,(x-TL)/TW))*(n-1)); }
 
       function paint() {
-        ctx.clearRect(0, 0, sw, sh);
-
-        // Track background
-        roundRectPath(ctx, TL, TY - TH/2, TW, TH, TH/2);
-        ctx.fillStyle = '#E5E7EB';
-        ctx.fill();
-
-        // Active segment
-        var fx = idxToX(fromIdx);
-        var tx = idxToX(toIdx);
-        roundRectPath(ctx, fx, TY - TH/2, tx - fx, TH, TH/2);
-        ctx.fillStyle = primary;
-        ctx.fill();
-
-        // Tick marks (only if not too many)
-        if (n <= 72) {
-          for (var ti = 0; ti < n; ti++) {
-            var tickX   = idxToX(ti);
-            var inRange = ti >= fromIdx && ti <= toIdx;
-            ctx.beginPath();
-            ctx.arc(tickX, TY, 2.5, 0, Math.PI * 2);
-            ctx.fillStyle = inRange ? hexToRgba(primary, 0.4) : 'rgba(156,163,175,0.35)';
+        ctx.clearRect(0,0,sw,sh);
+        // Track
+        roundRectPath(ctx, TL, TY-TH/2, TW, TH, TH/2);
+        ctx.fillStyle = '#E5E7EB'; ctx.fill();
+        // Active range
+        var fx = ix2x(fromIdx), tx = ix2x(toIdx);
+        roundRectPath(ctx, fx, TY-TH/2, tx-fx, TH, TH/2);
+        ctx.fillStyle = primary; ctx.fill();
+        // Ticks
+        if (n <= 60) {
+          for (var ti=0; ti<n; ti++) {
+            var inR = ti>=fromIdx && ti<=toIdx;
+            ctx.beginPath(); ctx.arc(ix2x(ti), TY, 2.5, 0, Math.PI*2);
+            ctx.fillStyle = inR ? hexToRgba(primary,0.45) : 'rgba(156,163,175,0.4)';
             ctx.fill();
           }
         }
-
         // Thumbs
-        drawThumb(ctx, fx, TY, THUMB_R, primary);
-        drawThumb(ctx, tx, TY, THUMB_R, primary);
+        [fx, tx].forEach(function(x) {
+          ctx.save();
+          ctx.shadowColor='rgba(0,0,0,0.18)'; ctx.shadowBlur=6; ctx.shadowOffsetY=2;
+          ctx.beginPath(); ctx.arc(x,TY,R,0,Math.PI*2); ctx.fillStyle='#FFFFFF'; ctx.fill();
+          ctx.restore();
+          ctx.beginPath(); ctx.arc(x,TY,R,0,Math.PI*2); ctx.strokeStyle=primary; ctx.lineWidth=2.5; ctx.stroke();
+          ctx.beginPath(); ctx.arc(x,TY,3,0,Math.PI*2); ctx.fillStyle=primary; ctx.fill();
+        });
       }
-
-      function drawThumb(ctx, x, y, r, fill) {
-        ctx.save();
-        ctx.shadowColor   = 'rgba(0,0,0,0.18)';
-        ctx.shadowBlur    = 6;
-        ctx.shadowOffsetY = 2;
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fill();
-        ctx.restore();
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = fill;
-        ctx.lineWidth   = 2.5;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(x, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = fill;
-        ctx.fill();
-      }
-
       paint();
 
-      // ── Drag interaction ──────────────────────────────────────────────────
+      // Drag
       var dragging = null;
-
-      canvas.addEventListener('mousedown', function (e) {
-        var rect = canvas.getBoundingClientRect();
-        var mx   = e.clientX - rect.left;
-        var dF   = Math.abs(mx - idxToX(fromIdx));
-        var dT   = Math.abs(mx - idxToX(toIdx));
-        if (Math.min(dF, dT) <= THUMB_R + 6) {
-          dragging = (dF <= dT) ? 'from' : 'to';
-          canvas.style.cursor = 'grabbing';
-          e.preventDefault();
-        }
+      cv.addEventListener('mousedown', function(e) {
+        var rx = e.clientX - cv.getBoundingClientRect().left;
+        var dF = Math.abs(rx - ix2x(fromIdx)), dT = Math.abs(rx - ix2x(toIdx));
+        if (Math.min(dF,dT) <= R+6) { dragging = dF<=dT ? 'from':'to'; cv.style.cursor='grabbing'; e.preventDefault(); }
       });
-
-      _mmHandler = function (e) {
+      _mmHandler = function(e) {
         if (!dragging) return;
-        var rect = canvas.getBoundingClientRect();
-        var idx  = xToIdx(e.clientX - rect.left);
-        if (dragging === 'from') fromIdx = Math.min(idx, toIdx);
-        else                     toIdx   = Math.max(idx, fromIdx);
-        fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
-        toLbl.textContent   = fmtDisplay(allItems[toIdx]);
+        var idx = x2ix(e.clientX - cv.getBoundingClientRect().left);
+        if (dragging==='from') fromIdx = Math.min(idx,toIdx);
+        else                   toIdx   = Math.max(idx,fromIdx);
+        fromChip.textContent = fmtShort(allItems[fromIdx]);
+        toChip.textContent   = fmtShort(allItems[toIdx]);
         paint();
       };
-      _muHandler = function () {
-        if (dragging) { dragging = null; canvas.style.cursor = 'grab'; }
-      };
+      _muHandler = function() { if(dragging){ dragging=null; cv.style.cursor='grab'; } };
       document.addEventListener('mousemove', _mmHandler);
       document.addEventListener('mouseup',   _muHandler);
 
-      // ── Button handlers ───────────────────────────────────────────────────
-      applyBtn.addEventListener('click', function () {
-        if (!filterInteraction) return;
-        var selected = allItems.slice(fromIdx, toIdx + 1).map(function (item) {
-          return [item.raw];
-        });
-        dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, {
-          concepts: ['dateDimension'],
-          values:   selected
-        });
+      // Buttons
+      applyBtn.addEventListener('click', function() {
+        var concepts = _fieldId ? [_fieldId] : ['dateDimension'];
+        var values   = allItems.slice(fromIdx, toIdx+1).map(function(i){ return [i.raw]; });
+        try {
+          dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, { concepts: concepts, values: values });
+        } catch(e) { /* interaction not configured */ }
         isFiltered = true;
         badge.style.display = 'block';
       });
 
-      resetBtn.addEventListener('click', function () {
-        fromIdx = 0;
-        toIdx   = allItems.length - 1;
-        fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
-        toLbl.textContent   = fmtDisplay(allItems[toIdx]);
+      resetBtn.addEventListener('click', function() {
+        fromIdx = 0; toIdx = allItems.length - 1;
+        fromChip.textContent = fmtShort(allItems[fromIdx]);
+        toChip.textContent   = fmtShort(allItems[toIdx]);
         paint();
-        if (filterInteraction) {
-          dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, {
-            concepts: ['dateDimension'],
-            values:   []
-          });
-        }
+        try {
+          dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, { concepts: _fieldId ? [_fieldId] : ['dateDimension'], values: [] });
+        } catch(e) { /* interaction not configured */ }
         isFiltered = false;
         badge.style.display = 'none';
       });
@@ -423,26 +347,27 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
   // ── Empty state ───────────────────────────────────────────────────────────────
   function renderEmpty(cardBg, border, textColor, title) {
+    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
+    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
     document.body.innerHTML = '';
-    var card = mk('div', [
-      'width:100%','height:100%','display:flex','flex-direction:column',
-      'align-items:center','justify-content:center',
-      'background:'+cardBg,'border:1px solid '+border,'border-radius:12px'
-    ]);
-    var msg = mk('div', ['font-size:12px','color:'+textColor,'opacity:0.4','text-align:center']);
+    var card = mk('div', {
+      position:'absolute', inset:'0',
+      display:'flex', alignItems:'center', justifyContent:'center',
+      background:cardBg, border:'1px solid '+border, borderRadius:'12px'
+    });
+    var msg = mk('div', { fontSize:'12px', color:textColor, opacity:'0.4', textAlign:'center' });
     msg.textContent = 'Add a Date dimension to use ' + title;
     card.appendChild(msg);
     document.body.appendChild(card);
   }
 
-  // ── DOM helper ────────────────────────────────────────────────────────────────
+  // ── DOM helper — accepts style object ────────────────────────────────────────
   function mk(tag, styles) {
     var e = document.createElement(tag);
-    e.style.cssText = styles.join(';');
+    Object.keys(styles).forEach(function(k) { e.style[k] = styles[k]; });
     return e;
   }
 
-  // ── Subscribe ─────────────────────────────────────────────────────────────────
   dscc.subscribeToData(drawViz, { transform: dscc.tableTransform });
 
 })();

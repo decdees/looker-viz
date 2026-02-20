@@ -46,10 +46,15 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return 'rgba('+parseInt(hex.slice(0,2),16)+','+parseInt(hex.slice(2,4),16)+','+parseInt(hex.slice(4,6),16)+','+alpha+')';
   }
 
-  function formatNumber(value, compact) {
+  // isPercent: values are already ×100, just append '%'
+  function formatNumber(value, compact, isPercent) {
     if (value === null || value === undefined) return '—';
     var num = parseFloat(value);
     if (isNaN(num)) return String(value);
+    if (isPercent) {
+      var p = Math.round(num * 10) / 10;
+      return (p % 1 === 0 ? p.toFixed(0) : p.toFixed(1)) + '%';
+    }
     if (compact) {
       if (Math.abs(num) >= 1e9) return (num/1e9).toFixed(1).replace(/\.0$/,'')+'B';
       if (Math.abs(num) >= 1e6) return (num/1e6).toFixed(1).replace(/\.0$/,'')+'M';
@@ -108,6 +113,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var titleColor    = getColor(s.titleColor,     '#111827');
     var compact       = !(s.compactNumbers && s.compactNumbers.value === false);
     var showValues    = (s.showValues && s.showValues.value === true);
+    var labelInside   = (s.labelPosition && s.labelPosition.value === 'inside');
     var chartTitle    = (s.chartTitle && s.chartTitle.value) ? s.chartTitle.value : '';
     var barRadius     = 5;
 
@@ -130,6 +136,9 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
     var metricName = (metricIdx >= 0 && headers[metricIdx]) ? (headers[metricIdx].name || 'Value') : 'Value';
 
+    // Detect percentage field type
+    var isPercent = (metricIdx >= 0 && headers[metricIdx] && headers[metricIdx].type === 'PERCENT');
+
     var labels = [], values = [], maxVal = 0;
     for (var i=0; i<rows.length; i++) {
       labels.push(dimIdx >= 0 ? String(rows[i][dimIdx]) : 'Item '+(i+1));
@@ -142,6 +151,12 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     if (labels.length > limitVal) {
       labels = labels.slice(0, limitVal);
       values = values.slice(0, limitVal);
+    }
+
+    // Convert percent fractions → whole numbers (0.03 → 3)
+    if (isPercent) {
+      for (var pi=0; pi<values.length; pi++) values[pi] = Math.round(values[pi] * 10000) / 100;
+      maxVal = Math.round(maxVal * 10000) / 100;
     }
 
     var axis = niceAxis(maxVal);
@@ -214,7 +229,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         if (lw > maxLabelW) maxLabelW = lw;
       }
       var leftPad   = Math.min(maxLabelW + 14, 180);
-      var rightPad  = showValues ? 58 : 20;
+      var rightPad  = (showValues && !labelInside) ? 58 : 20;
       var topPad    = 10;
       var bottomPad = 32;
 
@@ -224,6 +239,25 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       var chartH = ch - topPad - bottomPad;
 
       if (chartW < 20 || chartH < 20 || n === 0) return;
+
+      // ── Bar sizing with max-height cap + vertical centering ───────────────
+      var MAX_BAR_H  = 48;
+      var rawGroup   = chartH / n;
+      var rawGap     = Math.max(4, rawGroup * 0.28);
+      var rawBarH    = rawGroup - rawGap;
+
+      var barH, barGap, groupHeight, vertOffset;
+      if (rawBarH > MAX_BAR_H) {
+        barH        = MAX_BAR_H;
+        barGap      = Math.max(6, Math.round(barH * 0.25));
+        groupHeight = barH + barGap;
+        vertOffset  = Math.max(0, (chartH - n * groupHeight) / 2);
+      } else {
+        barH        = rawBarH;
+        barGap      = rawGap;
+        groupHeight = rawGroup;
+        vertOffset  = 0;
+      }
 
       // ── Vertical gridlines + x-axis tick labels ───────────────────────────
       for (var ti=0; ti<axis.ticks.length; ti++) {
@@ -240,16 +274,12 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'top';
         ctx.font = FONT;
-        ctx.fillText(formatNumber(tv, compact), tx, chartY+chartH+8);
+        ctx.fillText(formatNumber(tv, compact, isPercent), tx, chartY+chartH+8);
       }
 
       // ── Bars ─────────────────────────────────────────────────────────────
-      var groupHeight = chartH / n;
-      var barGap      = Math.max(4, groupHeight * 0.28);
-      var barH        = groupHeight - barGap;
-
       for (var bi=0; bi<n; bi++) {
-        var by  = chartY + bi*groupHeight + barGap/2;
+        var by  = chartY + vertOffset + bi*groupHeight + barGap/2;
         var bw  = (values[bi] / axis.max) * chartW;
         if (bw < 1 && values[bi] > 0) bw = 1;
 
@@ -268,23 +298,30 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         ctx.font = FONT;
         ctx.fillText(truncateLabel(ctx, labels[bi], leftPad - 10), chartX - 8, by + barH/2);
 
-        // Value label at bar end
+        // Value label
         if (showValues && bw > 0) {
-          ctx.fillStyle    = titleColor;
-          ctx.textAlign    = 'left';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(formatNumber(values[bi], compact), chartX + bw + 6, by + barH/2);
+          var fv    = formatNumber(values[bi], compact, isPercent);
+          var textW = ctx.measureText(fv).width;
+          if (labelInside && bw > textW + 12) {
+            ctx.fillStyle    = '#FFFFFF';
+            ctx.textAlign    = 'right';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(fv, chartX + bw - 6, by + barH/2);
+          } else if (!labelInside) {
+            ctx.fillStyle    = titleColor;
+            ctx.textAlign    = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(fv, chartX + bw + 6, by + barH/2);
+          }
         }
       }
 
       // ── Axis lines ────────────────────────────────────────────────────────
       ctx.strokeStyle = borderColor; ctx.lineWidth = 1;
-      // Left vertical axis
       ctx.beginPath();
       ctx.moveTo(Math.round(chartX)+0.5, chartY);
       ctx.lineTo(Math.round(chartX)+0.5, chartY+chartH);
       ctx.stroke();
-      // Bottom horizontal baseline
       ctx.beginPath();
       ctx.moveTo(chartX, Math.round(chartY+chartH)+0.5);
       ctx.lineTo(chartX+chartW, Math.round(chartY+chartH)+0.5);
@@ -311,17 +348,23 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       canvasWrap.appendChild(tooltip);
 
       var lastIdx = -1;
+      var barsTop    = chartY + vertOffset;
+      var barsBottom = barsTop + n * groupHeight;
 
       canvas.addEventListener('mousemove', function(e) {
         var rect = canvas.getBoundingClientRect();
         var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-        var idx = Math.floor((my - chartY) / groupHeight);
-        if (idx < 0 || idx >= n || my < chartY || my > chartY+chartH || mx < 0 || mx > cw) {
+        // Only react inside the bar block
+        if (my < barsTop || my > barsBottom || mx < 0 || mx > cw) {
+          tooltip.style.opacity = '0'; octx.clearRect(0,0,cw,ch); lastIdx = -1; return;
+        }
+        var idx = Math.floor((my - barsTop) / groupHeight);
+        if (idx < 0 || idx >= n) {
           tooltip.style.opacity = '0'; octx.clearRect(0,0,cw,ch); lastIdx = -1; return;
         }
         if (idx !== lastIdx) {
           lastIdx = idx; octx.clearRect(0,0,cw,ch);
-          var hy = chartY + idx*groupHeight + groupHeight/2;
+          var hy = barsTop + idx*groupHeight + groupHeight/2;
           octx.strokeStyle = hexToRgba(axisTextColor, 0.2);
           octx.lineWidth = 1; octx.setLineDash([4,3]);
           octx.beginPath();
@@ -333,7 +376,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         tooltip.innerHTML = '<div style="font-weight:600;margin-bottom:4px">'+labels[idx]+'</div>'
           + '<div style="display:flex;align-items:center;gap:6px">'
           + '<div style="width:8px;height:8px;border-radius:2px;background:'+barColor+';flex-shrink:0"></div>'
-          + metricName+': <strong>'+formatNumber(values[idx], compact)+'</strong></div>';
+          + metricName+': <strong>'+formatNumber(values[idx], compact, isPercent)+'</strong></div>';
         tooltip.style.opacity = '1';
         var tx = mx+14, tty = my-12;
         if (tx + tooltip.offsetWidth  > cw) tx  = mx - tooltip.offsetWidth  - 10;

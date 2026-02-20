@@ -43,6 +43,16 @@
           "defaultValue": false
         },
         {
+          "id": "labelPosition",
+          "label": "Label position",
+          "type": "SELECT_SINGLE",
+          "options": [
+            { "label": "Outside", "value": "outside" },
+            { "label": "Inside",  "value": "inside"  }
+          ],
+          "defaultValue": "outside"
+        },
+        {
           "id": "compactNumbers",
           "label": "Compact numbers (K/M/B)",
           "type": "CHECKBOX",

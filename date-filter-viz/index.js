@@ -31,6 +31,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
  *  - Dual-handle range slider (drag to select from/to)
  *  - Sends FILTER interaction to Looker Studio
  *  - Expands range memory across redraws so filtered data doesn't shrink the slider
+ *  - Compact horizontal toolbar layout
  */
 
 (function () {
@@ -98,11 +99,6 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return pad2(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
   }
 
-  function fmtMonthYear(item) {
-    if (!item) return '';
-    return MONTHS[item.date.getMonth()] + ' ' + item.date.getFullYear();
-  }
-
   function pad2(n) { return String(n).padStart(2, '0'); }
 
   // Polyfill for roundRect on canvas
@@ -128,7 +124,6 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var border    = getColor(s.borderColor,  '#E5E7EB');
     var textColor = getColor(s.textColor,    '#111827');
     var muted     = getColor(s.mutedColor,   '#6B7280');
-    var trackBg   = hexToRgba(border.replace('#',''), 1);  // reuse border color for track
     var title     = (s.filterTitle && s.filterTitle.value) || 'Date Range Filter';
 
     // ── Parse data ────────────────────────────────────────────────────────────
@@ -151,23 +146,26 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     }
     items.sort(function(a, b) { return a.date - b.date; });
 
-    if (items.length === 0) {
-      renderEmpty(cardBg, border, textColor, title);
-      return;
+    // ── Expand allItems FIRST (never shrink so slider survives filtered redraws)
+    if (items.length > 0) {
+      if (allItems.length === 0) {
+        allItems = items;
+        fromIdx  = 0;
+        toIdx    = allItems.length - 1;
+      } else {
+        var oldKeys = {};
+        allItems.forEach(function(i) { oldKeys[i.raw] = true; });
+        items.forEach(function(i) { if (!oldKeys[i.raw]) allItems.push(i); });
+        allItems.sort(function(a, b) { return a.date - b.date; });
+        fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
+        toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
+      }
     }
 
-    // Expand allItems (never shrink so slider survives filtered redraws)
+    // Only show empty state if we have NO data at all (dimension not configured)
     if (allItems.length === 0) {
-      allItems = items;
-      fromIdx  = 0;
-      toIdx    = allItems.length - 1;
-    } else {
-      var oldKeys = {};
-      allItems.forEach(function(i) { oldKeys[i.raw] = true; });
-      items.forEach(function(i) { if (!oldKeys[i.raw]) allItems.push(i); });
-      allItems.sort(function(a, b) { return a.date - b.date; });
-      fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
-      toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
+      renderEmpty(cardBg, border, textColor, title);
+      return;
     }
 
     var filterInteraction = (data.interactions || {}).dateFilter || null;
@@ -185,34 +183,37 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     document.body.innerHTML = '';
     document.body.style.cssText = 'margin:0;padding:0;overflow:hidden;background:transparent;';
 
+    // ── Outer card ────────────────────────────────────────────────────────────
     var card = mk('div', [
       'width:100%', 'height:100%', 'display:flex', 'flex-direction:column',
       'background:' + cardBg,
       'border:1px solid ' + border,
       'border-radius:12px',
       'box-shadow:0 1px 4px rgba(0,0,0,0.06)',
-      'padding:16px 20px 14px',
+      'padding:10px 16px 10px',
       'box-sizing:border-box',
-      'overflow:hidden'
+      'overflow:hidden',
+      'justify-content:center'
     ]);
 
-    // ── Title ─────────────────────────────────────────────────────────────────
-    var titleRow = mk('div', ['display:flex','align-items:center','gap:8px','margin-bottom:8px','flex-shrink:0']);
+    // ── Row 1: Title + badge ──────────────────────────────────────────────────
+    var titleRow = mk('div', ['display:flex','align-items:center','gap:6px','flex-shrink:0','margin-bottom:8px']);
+
     var icon = mk('div', ['color:'+primary,'display:flex','flex-shrink:0']);
-    icon.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none">'
+    icon.innerHTML = '<svg width="13" height="13" viewBox="0 0 14 14" fill="none">'
       + '<rect x="0.75" y="1.75" width="12.5" height="11.5" rx="1.75" stroke="'+primary+'" stroke-width="1.5"/>'
       + '<path d="M0.75 5.5h12.5" stroke="'+primary+'" stroke-width="1.5"/>'
       + '<path d="M4.5 0.5v2.5M9.5 0.5v2.5" stroke="'+primary+'" stroke-width="1.5" stroke-linecap="round"/>'
       + '</svg>';
-    var titleEl = mk('div', ['font-size:11px','font-weight:700','color:'+textColor,'letter-spacing:0.06em','text-transform:uppercase']);
+
+    var titleEl = mk('div', ['font-size:11px','font-weight:700','color:'+textColor,'letter-spacing:0.06em','text-transform:uppercase','flex:1']);
     titleEl.textContent = title;
 
     var badge = mk('div', [
       'font-size:10px','font-weight:600','padding:2px 7px','border-radius:20px',
       'background:'+hexToRgba(primary, 0.12),'color:'+primary,
-      'margin-left:auto','flex-shrink:0',
-      'display:' + (isFiltered ? 'block' : 'none'),
-      'transition:opacity 0.2s'
+      'flex-shrink:0',
+      'display:' + (isFiltered ? 'block' : 'none')
     ]);
     badge.textContent = 'Filtered';
 
@@ -221,86 +222,61 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     titleRow.appendChild(badge);
     card.appendChild(titleRow);
 
-    // ── Available range info ──────────────────────────────────────────────────
-    var info = mk('div', ['font-size:11px','color:'+muted,'margin-bottom:14px','flex-shrink:0']);
-    info.textContent = 'Available: ' + fmtDisplay(allItems[0]) + ' – ' + fmtDisplay(allItems[allItems.length-1]);
-    card.appendChild(info);
+    // ── Row 2: [From label] [Slider] [To label] [Buttons] ────────────────────
+    var controlRow = mk('div', ['display:flex','align-items:center','gap:10px','flex:1','min-height:0','flex-shrink:0']);
 
-    // ── FROM / TO date boxes ──────────────────────────────────────────────────
-    var dateRow = mk('div', ['display:flex','gap:10px','margin-bottom:12px','flex-shrink:0']);
+    // From date label
+    var fromLbl = mk('div', [
+      'font-size:12px','font-weight:600','color:'+textColor,
+      'background:'+hexToRgba(primary, 0.06),
+      'border:1.5px solid '+hexToRgba(primary, 0.2),
+      'border-radius:7px','padding:5px 10px',
+      'white-space:nowrap','flex-shrink:0'
+    ]);
+    fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
 
-    function makeDateBox(label) {
-      var wrap = mk('div', ['flex:1','min-width:0']);
-      var lbl  = mk('div', ['font-size:10px','font-weight:600','color:'+muted,'letter-spacing:0.08em','text-transform:uppercase','margin-bottom:4px']);
-      lbl.textContent = label;
-      var val  = mk('div', [
-        'font-size:13px','font-weight:600','color:'+textColor,
-        'background:'+hexToRgba(primary, 0.06),
-        'border:1.5px solid '+hexToRgba(primary, 0.2),
-        'border-radius:8px','padding:7px 12px',
-        'white-space:nowrap','overflow:hidden','text-overflow:ellipsis'
-      ]);
-      wrap.appendChild(lbl);
-      wrap.appendChild(val);
-      return { wrap: wrap, val: val };
-    }
+    // Slider wrapper (flex:1)
+    var sliderWrap = mk('div', ['flex:1','position:relative','min-width:60px','height:36px']);
 
-    var fromBox = makeDateBox('From');
-    var toBox   = makeDateBox('To');
-    fromBox.val.textContent = fmtDisplay(allItems[fromIdx]);
-    toBox.val.textContent   = fmtDisplay(allItems[toIdx]);
+    // To date label
+    var toLbl = mk('div', [
+      'font-size:12px','font-weight:600','color:'+textColor,
+      'background:'+hexToRgba(primary, 0.06),
+      'border:1.5px solid '+hexToRgba(primary, 0.2),
+      'border-radius:7px','padding:5px 10px',
+      'white-space:nowrap','flex-shrink:0'
+    ]);
+    toLbl.textContent = fmtDisplay(allItems[toIdx]);
 
-    dateRow.appendChild(fromBox.wrap);
-    dateRow.appendChild(toBox.wrap);
-    card.appendChild(dateRow);
-
-    // ── Slider area ───────────────────────────────────────────────────────────
-    var sliderWrap = mk('div', ['flex:1','position:relative','min-height:36px','max-height:52px','flex-shrink:0']);
-    card.appendChild(sliderWrap);
-
-    // ── Axis labels ───────────────────────────────────────────────────────────
-    var axisRow = mk('div', ['display:flex','justify-content:space-between','margin-top:6px','flex-shrink:0']);
-    var axisL = mk('div', ['font-size:10px','color:'+muted]);
-    axisL.textContent = fmtMonthYear(allItems[0]);
-    var axisR = mk('div', ['font-size:10px','color:'+muted]);
-    axisR.textContent = fmtMonthYear(allItems[allItems.length-1]);
-    axisRow.appendChild(axisL);
-    axisRow.appendChild(axisR);
-    card.appendChild(axisRow);
-
-    // ── Divider ───────────────────────────────────────────────────────────────
-    var divider = mk('div', ['height:1px','background:'+border,'margin:12px 0','flex-shrink:0']);
-    card.appendChild(divider);
-
-    // ── Buttons ───────────────────────────────────────────────────────────────
-    var btnRow = mk('div', ['display:flex','gap:8px','justify-content:flex-end','flex-shrink:0']);
-
+    // Buttons
     var resetBtn = mk('button', [
-      'font-size:12px','font-weight:500','padding:7px 14px','border-radius:7px',
+      'font-size:11px','font-weight:500','padding:5px 11px','border-radius:7px',
       'border:1.5px solid '+border,'background:transparent','color:'+muted,
-      'cursor:pointer','font-family:inherit','transition:opacity 0.15s'
+      'cursor:pointer','font-family:inherit','flex-shrink:0','white-space:nowrap'
     ]);
     resetBtn.textContent = 'Reset';
 
     var applyBtn = mk('button', [
-      'font-size:12px','font-weight:600','padding:7px 18px','border-radius:7px',
+      'font-size:11px','font-weight:600','padding:5px 13px','border-radius:7px',
       'border:none','background:'+primary,'color:#FFFFFF',
-      'cursor:pointer','font-family:inherit',
-      'box-shadow:0 1px 4px '+hexToRgba(primary, 0.35),
-      'transition:opacity 0.15s'
+      'cursor:pointer','font-family:inherit','flex-shrink:0','white-space:nowrap',
+      'box-shadow:0 1px 4px '+hexToRgba(primary, 0.35)
     ]);
-    applyBtn.textContent = 'Apply Filter';
+    applyBtn.textContent = 'Apply';
 
-    btnRow.appendChild(resetBtn);
-    btnRow.appendChild(applyBtn);
-    card.appendChild(btnRow);
+    controlRow.appendChild(fromLbl);
+    controlRow.appendChild(sliderWrap);
+    controlRow.appendChild(toLbl);
+    controlRow.appendChild(resetBtn);
+    controlRow.appendChild(applyBtn);
+    card.appendChild(controlRow);
 
     document.body.appendChild(card);
 
     // ── Build canvas slider (after layout) ────────────────────────────────────
     requestAnimationFrame(function () {
-      var sw = sliderWrap.offsetWidth  || 200;
-      var sh = sliderWrap.offsetHeight || 44;
+      var sw  = sliderWrap.offsetWidth  || 200;
+      var sh  = sliderWrap.offsetHeight || 36;
       var dpr = window.devicePixelRatio || 1;
 
       var canvas = document.createElement('canvas');
@@ -312,11 +288,11 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       var ctx = canvas.getContext('2d');
       ctx.scale(dpr, dpr);
 
-      var THUMB_R = 9;
-      var TL      = THUMB_R + 4;          // track left x
-      var TW      = sw - THUMB_R * 2 - 8; // track width
-      var TY      = sh / 2;               // track center y
-      var TH      = 5;                    // track height
+      var THUMB_R = 8;
+      var TL      = THUMB_R + 4;
+      var TW      = sw - THUMB_R * 2 - 8;
+      var TY      = sh / 2;
+      var TH      = 5;
       var n       = allItems.length;
 
       function idxToX(i) {
@@ -332,7 +308,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
         // Track background
         roundRectPath(ctx, TL, TY - TH/2, TW, TH, TH/2);
-        ctx.fillStyle = border;
+        ctx.fillStyle = '#E5E7EB';
         ctx.fill();
 
         // Active segment
@@ -342,43 +318,40 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         ctx.fillStyle = primary;
         ctx.fill();
 
-        // Tick marks for data points (only if not too many)
+        // Tick marks (only if not too many)
         if (n <= 72) {
           for (var ti = 0; ti < n; ti++) {
-            var tickX = idxToX(ti);
+            var tickX   = idxToX(ti);
             var inRange = ti >= fromIdx && ti <= toIdx;
             ctx.beginPath();
             ctx.arc(tickX, TY, 2.5, 0, Math.PI * 2);
-            ctx.fillStyle = inRange ? hexToRgba(primary, 0.4) : hexToRgba(muted, 0.25);
+            ctx.fillStyle = inRange ? hexToRgba(primary, 0.4) : 'rgba(156,163,175,0.35)';
             ctx.fill();
           }
         }
 
         // Thumbs
-        drawThumb(ctx, fx, TY, THUMB_R, primary, cardBg);
-        drawThumb(ctx, tx, TY, THUMB_R, primary, cardBg);
+        drawThumb(ctx, fx, TY, THUMB_R, primary);
+        drawThumb(ctx, tx, TY, THUMB_R, primary);
       }
 
-      function drawThumb(ctx, x, y, r, fill, bg) {
-        // Drop shadow
+      function drawThumb(ctx, x, y, r, fill) {
         ctx.save();
-        ctx.shadowColor    = 'rgba(0,0,0,0.18)';
-        ctx.shadowBlur     = 6;
-        ctx.shadowOffsetY  = 2;
+        ctx.shadowColor   = 'rgba(0,0,0,0.18)';
+        ctx.shadowBlur    = 6;
+        ctx.shadowOffsetY = 2;
         ctx.beginPath();
         ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fillStyle = bg;
+        ctx.fillStyle = '#FFFFFF';
         ctx.fill();
         ctx.restore();
-        // Colored border ring
         ctx.beginPath();
         ctx.arc(x, y, r, 0, Math.PI * 2);
         ctx.strokeStyle = fill;
         ctx.lineWidth   = 2.5;
         ctx.stroke();
-        // Center dot
         ctx.beginPath();
-        ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
         ctx.fillStyle = fill;
         ctx.fill();
       }
@@ -406,8 +379,8 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
         var idx  = xToIdx(e.clientX - rect.left);
         if (dragging === 'from') fromIdx = Math.min(idx, toIdx);
         else                     toIdx   = Math.max(idx, fromIdx);
-        fromBox.val.textContent = fmtDisplay(allItems[fromIdx]);
-        toBox.val.textContent   = fmtDisplay(allItems[toIdx]);
+        fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
+        toLbl.textContent   = fmtDisplay(allItems[toIdx]);
         paint();
       };
       _muHandler = function () {
@@ -433,8 +406,8 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       resetBtn.addEventListener('click', function () {
         fromIdx = 0;
         toIdx   = allItems.length - 1;
-        fromBox.val.textContent = fmtDisplay(allItems[fromIdx]);
-        toBox.val.textContent   = fmtDisplay(allItems[toIdx]);
+        fromLbl.textContent = fmtDisplay(allItems[fromIdx]);
+        toLbl.textContent   = fmtDisplay(allItems[toIdx]);
         paint();
         if (filterInteraction) {
           dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, {

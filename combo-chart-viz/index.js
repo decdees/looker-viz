@@ -82,6 +82,20 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return { max: niceMax, ticks: ticks };
   }
 
+  var MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function fmtXAxisLabel(raw) {
+    var s = String(raw).trim();
+    // YYYYMM → "25-Jan"
+    if (/^\d{6}$/.test(s)) {
+      var yr = s.slice(2, 4);
+      var mo = parseInt(s.slice(4, 6), 10) - 1;
+      return yr + '-' + (MONTHS_SHORT[mo] || s.slice(4));
+    }
+    if (s.length > 10) return s.substring(0, 9) + '\u2026';
+    return s;
+  }
+
   function roundedRectTop(ctx, x, y, w, h, r) {
     if (h <= 0) return;
     if (r > h) r = h;
@@ -256,10 +270,10 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var ctx = canvas.getContext('2d');
     ctx.scale(dpr, dpr);
 
-    var leftPad   = 52;
-    var rightPad  = hasLine ? 52 : 16;
-    var topPad    = showValues ? 20 : 10;
-    var bottomPad = 38;
+    var leftPad   = 56;
+    var rightPad  = hasLine ? 56 : 16;
+    var topPad    = showValues ? 24 : 10;
+    var bottomPad = 42;
     var chartX    = leftPad;
     var chartY    = topPad;
     var chartW    = cw - leftPad - rightPad;
@@ -268,7 +282,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     if (chartW < 20 || chartH < 20 || labels.length === 0) return;
 
     var n    = labels.length;
-    var FONT = '11px "Plus Jakarta Sans", system-ui, sans-serif';
+    var FONT = '12px "Plus Jakarta Sans", system-ui, sans-serif';
 
     function doDraw() {
 
@@ -307,9 +321,10 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     }
 
     // ── Bars ───────────────────────────────────────────────────────────────
-    var groupWidth = chartW / n;
-    var barGap     = Math.max(6, groupWidth * 0.28);
-    var barWidth   = groupWidth - barGap;
+    var groupWidth  = chartW / n;
+    var barGap      = Math.max(6, groupWidth * 0.28);
+    var barWidth    = groupWidth - barGap;
+    var barLabelYs  = [];   // track bar label Y positions for overlap detection
 
     for (var bi = 0; bi < n; bi++) {
       var bx = chartX + bi * groupWidth + barGap / 2;
@@ -323,18 +338,24 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
       // Value labels on bars
       if (showValues && bh > 0) {
-        ctx.font = '10px "Plus Jakarta Sans", system-ui, sans-serif';
+        ctx.font = '12px "Plus Jakarta Sans", system-ui, sans-serif';
         ctx.textAlign = 'center';
-        if (barLabelInside && bh > 18) {
+        if (barLabelInside && bh > 20) {
           ctx.fillStyle    = '#FFFFFF';
           ctx.textBaseline = 'top';
           ctx.fillText(formatNumber(barValues[bi], compact), bx + barWidth / 2, by + 4);
+          barLabelYs[bi] = null;  // inside — no overlap with line labels possible
         } else if (!barLabelInside) {
           ctx.fillStyle    = titleColor;
           ctx.textBaseline = 'bottom';
           ctx.fillText(formatNumber(barValues[bi], compact), bx + barWidth / 2, by - 2);
+          barLabelYs[bi] = by - 2;  // the baseline Y of this label
+        } else {
+          barLabelYs[bi] = null;
         }
         ctx.font = FONT;
+      } else {
+        barLabelYs[bi] = null;
       }
 
       // X axis label
@@ -342,9 +363,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       ctx.textAlign    = 'center';
       ctx.textBaseline = 'top';
       ctx.font = FONT;
-      var displayLabel = labels[bi];
-      if (displayLabel.length > 10) displayLabel = displayLabel.substring(0, 9) + '\u2026';
-      ctx.fillText(displayLabel, chartX + bi * groupWidth + groupWidth / 2, chartY + chartH + 10);
+      ctx.fillText(fmtXAxisLabel(labels[bi]), chartX + bi * groupWidth + groupWidth / 2, chartY + chartH + 10);
     }
 
     // ── Line area fill ─────────────────────────────────────────────────────
@@ -390,12 +409,18 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
 
       // ── Line data labels ─────────────────────────────────────────────────
       if (showValues) {
-        ctx.font = '10px "Plus Jakarta Sans", system-ui, sans-serif';
+        ctx.font = '12px "Plus Jakarta Sans", system-ui, sans-serif';
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'bottom';
         ctx.fillStyle    = lineColor;
         for (var li = 0; li < pts.length; li++) {
-          ctx.fillText(formatNumber(lineValues[li], compact), pts[li].x, pts[li].y - 8);
+          var lineLabelY = pts[li].y - 10;
+          // Push line label up if it would overlap the bar label above this column
+          if (barLabelYs[li] != null) {
+            var gap = barLabelYs[li] - lineLabelY;
+            if (gap < 16) lineLabelY = barLabelYs[li] - 16;
+          }
+          ctx.fillText(formatNumber(lineValues[li], compact), pts[li].x, lineLabelY);
         }
         ctx.font = FONT;
       }

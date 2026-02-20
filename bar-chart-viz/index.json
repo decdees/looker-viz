@@ -49,6 +49,12 @@
           "defaultValue": true
         },
         {
+          "id": "maxBars",
+          "label": "Max bars to show",
+          "type": "TEXTINPUT",
+          "defaultValue": "20"
+        },
+        {
           "id": "cardBg",
           "label": "Background",
           "type": "FILL",

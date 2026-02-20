@@ -24,14 +24,12 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
   !*** ./src/types.ts ***!
   \**********************/
 /*! no static exports found */function(e,R,t){"use strict";var C,n,E,r,o,N,i;Object.defineProperty(R,"__esModule",{value:!0}),(C=R.ConceptType||(R.ConceptType={})).METRIC="METRIC",C.DIMENSION="DIMENSION",(R.MessageType||(R.MessageType={})).RENDER="RENDER",(n=R.FieldType||(R.FieldType={})).YEAR="YEAR",n.YEAR_QUARTER="YEAR_QUARTER",n.YEAR_MONTH="YEAR_MONTH",n.YEAR_WEEK="YEAR_WEEK",n.YEAR_MONTH_DAY="YEAR_MONTH_DAY",n.YEAR_MONTH_DAY_HOUR="YEAR_MONTH_DAY_HOUR",n.QUARTER="QUARTER",n.MONTH="MONTH",n.WEEK="WEEK",n.MONTH_DAY="MONTH_DAY",n.DAY_OF_WEEK="DAY_OF_WEEK",n.DAY="DAY",n.HOUR="HOUR",n.MINUTE="MINUTE",n.DURATION="DURATION",n.COUNTRY="COUNTRY",n.COUNTRY_CODE="COUNTRY_CODE",n.CONTINENT="CONTINENT",n.CONTINENT_CODE="CONTINENT_CODE",n.SUB_CONTINENT="SUB_CONTINENT",n.SUB_CONTINENT_CODE="SUB_CONTINENT_CODE",n.REGION="REGION",n.REGION_CODE="REGION_CODE",n.CITY="CITY",n.CITY_CODE="CITY_CODE",n.METRO_CODE="METRO_CODE",n.LATITUDE_LONGITUDE="LATITUDE_LONGITUDE",n.NUMBER="NUMBER",n.PERCENT="PERCENT",n.TEXT="TEXT",n.BOOLEAN="BOOLEAN",n.URL="URL",n.IMAGE="IMAGE",n.CURRENCY_AED="CURRENCY_AED",n.CURRENCY_ALL="CURRENCY_ALL",n.CURRENCY_ARS="CURRENCY_ARS",n.CURRENCY_AUD="CURRENCY_AUD",n.CURRENCY_BDT="CURRENCY_BDT",n.CURRENCY_BGN="CURRENCY_BGN",n.CURRENCY_BOB="CURRENCY_BOB",n.CURRENCY_BRL="CURRENCY_BRL",n.CURRENCY_CAD="CURRENCY_CAD",n.CURRENCY_CDF="CURRENCY_CDF",n.CURRENCY_CHF="CURRENCY_CHF",n.CURRENCY_CLP="CURRENCY_CLP",n.CURRENCY_CNY="CURRENCY_CNY",n.CURRENCY_COP="CURRENCY_COP",n.CURRENCY_CRC="CURRENCY_CRC",n.CURRENCY_CZK="CURRENCY_CZK",n.CURRENCY_DKK="CURRENCY_DKK",n.CURRENCY_DOP="CURRENCY_DOP",n.CURRENCY_EGP="CURRENCY_EGP",n.CURRENCY_ETB="CURRENCY_ETB",n.CURRENCY_EUR="CURRENCY_EUR",n.CURRENCY_GBP="CURRENCY_GBP",n.CURRENCY_HKD="CURRENCY_HKD",n.CURRENCY_HRK="CURRENCY_HRK",n.CURRENCY_HUF="CURRENCY_HUF",n.CURRENCY_IDR="CURRENCY_IDR",n.CURRENCY_ILS="CURRENCY_ILS",n.CURRENCY_INR="CURRENCY_INR",n.CURRENCY_IRR="CURRENCY_IRR",n.CURRENCY_ISK="CURRENCY_ISK",n.CURRENCY_JMD="CURRENCY_JMD",n.CURRENCY_JPY="CURRENCY_JPY",n.CURRENCY_KRW="CURRENCY_KRW",n.CURRENCY_LKR="CURRENCY_LKR",n.CURRENCY_LTL="CURRENCY_LTL",n.CURRENCY_MNT="CURRENCY_MNT",n.CURRENCY_MVR="CURRENCY_MVR",n.CURRENCY_MXN="CURRENCY_MXN",n.CURRENCY_MYR="CURRENCY_MYR",n.CURRENCY_NOK="CURRENCY_NOK",n.CURRENCY_NZD="CURRENCY_NZD",n.CURRENCY_PAB="CURRENCY_PAB",n.CURRENCY_PEN="CURRENCY_PEN",n.CURRENCY_PHP="CURRENCY_PHP",n.CURRENCY_PKR="CURRENCY_PKR",n.CURRENCY_PLN="CURRENCY_PLN",n.CURRENCY_RON="CURRENCY_RON",n.CURRENCY_RSD="CURRENCY_RSD",n.CURRENCY_RUB="CURRENCY_RUB",n.CURRENCY_SAR="CURRENCY_SAR",n.CURRENCY_SEK="CURRENCY_SEK",n.CURRENCY_SGD="CURRENCY_SGD",n.CURRENCY_THB="CURRENCY_THB",n.CURRENCY_TRY="CURRENCY_TRY",n.CURRENCY_TWD="CURRENCY_TWD",n.CURRENCY_TZS="CURRENCY_TZS",n.CURRENCY_UAH="CURRENCY_UAH",n.CURRENCY_USD="CURRENCY_USD",n.CURRENCY_UYU="CURRENCY_UYU",n.CURRENCY_VEF="CURRENCY_VEF",n.CURRENCY_VND="CURRENCY_VND",n.CURRENCY_YER="CURRENCY_YER",n.CURRENCY_ZAR="CURRENCY_ZAR",(E=R.TableType||(R.TableType={})).DEFAULT="DEFAULT",E.COMPARISON="COMPARISON",E.SUMMARY="SUMMARY",(r=R.DateRangeType||(R.DateRangeType={})).DEFAULT="DEFAULT",r.COMPARISON="COMPARISON",(o=R.ConfigDataElementType||(R.ConfigDataElementType={})).METRIC="METRIC",o.DIMENSION="DIMENSION",o.MAX_RESULTS="MAX_RESULTS",(N=R.ConfigStyleElementType||(R.ConfigStyleElementType={})).TEXTINPUT="TEXTINPUT",N.SELECT_SINGLE="SELECT_SINGLE",N.CHECKBOX="CHECKBOX",N.FONT_COLOR="FONT_COLOR",N.FONT_SIZE="FONT_SIZE",N.FONT_FAMILY="FONT_FAMILY",N.FILL_COLOR="FILL_COLOR",N.BORDER_COLOR="BORDER_COLOR",N.AXIS_COLOR="AXIS_COLOR",N.GRID_COLOR="GRID_COLOR",N.OPACITY="OPACITY",N.LINE_WEIGHT="LINE_WEIGHT",N.LINE_STYLE="LINE_STYLE",N.BORDER_RADIUS="BORDER_RADIUS",N.INTERVAL="INTERVAL",N.SELECT_RADIO="SELECT_RADIO",(R.DSInteractionType||(R.DSInteractionType={})).FILTER="FILTER",(i=R.ToDSMessageType||(R.ToDSMessageType={})).VIZ_READY="vizReady",i.INTERACTION="vizAction",(R.InteractionType||(R.InteractionType={})).FILTER="FILTER"}},n.c=C,n.d=function(e,R,t){n.o(e,R)||Object.defineProperty(e,R,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(R,e){if(1&e&&(R=n(R)),8&e)return R;if(4&e&&"object"==typeof R&&R&&R.__esModule)return R;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:R}),2&e&&"string"!=typeof R)for(var C in R)n.d(t,C,function(e){return R[e]}.bind(null,C));return t},n.n=function(e){var R=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(R,"a",R),R},n.o=function(e,R){return Object.prototype.hasOwnProperty.call(e,R)},n.p="",n(n.s="./src/index.ts");function n(e){if(C[e])return C[e].exports;var R=C[e]={i:e,l:!1,exports:{}};return t[e].call(R.exports,R,R.exports,n),R.l=!0,R.exports}var t,C});/**
- * Vertical Bar Chart - Looker Studio Community Visualization
- * Matches the Combo Chart bar style: rounded tops, Plus Jakarta Sans, card layout.
+ * Horizontal Bar Chart - Looker Studio Community Visualization
+ * Bars go left-to-right. Category labels on left axis. Matches Combo Chart style.
  */
 
 (function () {
   'use strict';
-
-  var MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
   // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -61,17 +59,6 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return num.toFixed(2);
   }
 
-  function fmtXLabel(raw) {
-    var s = String(raw).trim();
-    if (/^\d{6}$/.test(s)) {
-      var yr = s.slice(2,4);
-      var mo = parseInt(s.slice(4,6),10)-1;
-      return yr+'-'+(MONTHS_SHORT[mo] || s.slice(4));
-    }
-    if (s.length > 10) return s.substring(0,9)+'\u2026';
-    return s;
-  }
-
   function niceAxis(maxVal) {
     if (maxVal <= 0) return { max:10, ticks:[0,2,4,6,8,10] };
     var mag = Math.pow(10, Math.floor(Math.log10(maxVal)));
@@ -83,17 +70,29 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return { max: niceMax, ticks: ticks };
   }
 
-  function roundedRectTop(ctx, x, y, w, h, r) {
-    if (h <= 0) return;
-    if (r > h) r = h; if (r > w/2) r = w/2;
+  // Rounded right end for horizontal bars
+  function roundedRectRight(ctx, x, y, w, h, r) {
+    if (w <= 0) return;
+    if (r > w) r = w; if (r > h/2) r = h/2;
     ctx.beginPath();
-    ctx.moveTo(x, y+h);
-    ctx.lineTo(x, y+r);
-    ctx.arcTo(x, y, x+r, y, r);
-    ctx.lineTo(x+w-r, y);
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + w - r, y);
     ctx.arcTo(x+w, y, x+w, y+r, r);
-    ctx.lineTo(x+w, y+h);
+    ctx.lineTo(x+w, y+h-r);
+    ctx.arcTo(x+w, y+h, x+w-r, y+h, r);
+    ctx.lineTo(x, y+h);
     ctx.closePath();
+  }
+
+  // Truncate label to fit within maxPx pixels
+  function truncateLabel(ctx, text, maxPx) {
+    if (ctx.measureText(text).width <= maxPx) return text;
+    var ellipsis = '\u2026';
+    var t = text;
+    while (t.length > 1 && ctx.measureText(t + ellipsis).width > maxPx) {
+      t = t.slice(0, -1);
+    }
+    return t + ellipsis;
   }
 
   // ── Main ─────────────────────────────────────────────────────────────────────
@@ -112,6 +111,10 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var chartTitle    = (s.chartTitle && s.chartTitle.value) ? s.chartTitle.value : '';
     var barRadius     = 5;
 
+    // Max bars limit
+    var limitVal = s.maxBars && s.maxBars.value ? parseInt(s.maxBars.value, 10) : 20;
+    if (isNaN(limitVal) || limitVal <= 0) limitVal = 20;
+
     var table   = data.tables.DEFAULT;
     var headers = table.headers || [];
     var rows    = table.rows    || [];
@@ -119,8 +122,8 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var dimIdx = -1, metricIdx = -1;
     for (var hi=0; hi<headers.length; hi++) {
       var cid = headers[hi].configId;
-      if (cid === 'dimension') dimIdx     = hi;
-      if (cid === 'barMetric') metricIdx  = hi;
+      if (cid === 'dimension') dimIdx    = hi;
+      if (cid === 'barMetric') metricIdx = hi;
     }
     if (dimIdx    < 0) dimIdx    = 0;
     if (metricIdx < 0) metricIdx = 1;
@@ -133,6 +136,12 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       var v = metricIdx >= 0 && rows[i][metricIdx] != null ? (parseFloat(rows[i][metricIdx]) || 0) : 0;
       values.push(v);
       if (v > maxVal) maxVal = v;
+    }
+
+    // Apply limit
+    if (labels.length > limitVal) {
+      labels = labels.slice(0, limitVal);
+      values = values.slice(0, limitVal);
     }
 
     var axis = niceAxis(maxVal);
@@ -154,7 +163,7 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       'overflow:hidden'
     ].join(';');
 
-    // Header: title + legend
+    // Header: title + metric name
     var headerRow = document.createElement('div');
     headerRow.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-shrink:0;gap:8px;min-height:18px';
 
@@ -166,16 +175,12 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     ].join(';');
     titleEl.textContent = chartTitle;
 
-    // Legend dot
-    var legend = document.createElement('div');
-    legend.style.cssText = 'display:flex;align-items:center;gap:6px;flex-shrink:0;font-size:11px;color:'+axisTextColor+';white-space:nowrap';
-    var dot = document.createElement('div');
-    dot.style.cssText = 'width:10px;height:12px;border-radius:2px;background:'+barColor+';flex-shrink:0';
-    legend.appendChild(dot);
-    legend.appendChild(document.createTextNode(metricName));
+    var metricLabel = document.createElement('div');
+    metricLabel.style.cssText = 'font-size:11px;color:'+axisTextColor+';white-space:nowrap;flex-shrink:0';
+    metricLabel.textContent = metricName;
 
     headerRow.appendChild(titleEl);
-    headerRow.appendChild(legend);
+    headerRow.appendChild(metricLabel);
     wrapper.appendChild(headerRow);
 
     // Canvas container
@@ -196,87 +201,93 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var ctx = canvas.getContext('2d');
     ctx.scale(dpr, dpr);
 
-    var leftPad   = 56;
-    var rightPad  = 16;
-    var topPad    = showValues ? 24 : 10;
-    var bottomPad = 42;
-    var chartX    = leftPad;
-    var chartY    = topPad;
-    var chartW    = cw - leftPad - rightPad;
-    var chartH    = ch - topPad - bottomPad;
-    var n         = labels.length;
-
-    if (chartW < 20 || chartH < 20 || n === 0) return;
-
     var FONT = '12px "Plus Jakarta Sans", system-ui, sans-serif';
+    var n    = labels.length;
 
     function doDraw() {
-      // Y axis gridlines + labels
       ctx.font = FONT;
+
+      // Dynamically compute leftPad from longest category label
+      var maxLabelW = 0;
+      for (var li=0; li<n; li++) {
+        var lw = ctx.measureText(labels[li]).width;
+        if (lw > maxLabelW) maxLabelW = lw;
+      }
+      var leftPad   = Math.min(maxLabelW + 14, 180);
+      var rightPad  = showValues ? 58 : 20;
+      var topPad    = 10;
+      var bottomPad = 32;
+
+      var chartX = leftPad;
+      var chartY = topPad;
+      var chartW = cw - leftPad - rightPad;
+      var chartH = ch - topPad - bottomPad;
+
+      if (chartW < 20 || chartH < 20 || n === 0) return;
+
+      // ── Vertical gridlines + x-axis tick labels ───────────────────────────
       for (var ti=0; ti<axis.ticks.length; ti++) {
         var tv = axis.ticks[ti];
-        var ty = chartY + chartH - (tv / axis.max) * chartH;
+        var tx = chartX + (tv / axis.max) * chartW;
 
         ctx.strokeStyle = gridColor; ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(chartX,          Math.round(ty)+0.5);
-        ctx.lineTo(chartX+chartW,   Math.round(ty)+0.5);
+        ctx.moveTo(Math.round(tx)+0.5, chartY);
+        ctx.lineTo(Math.round(tx)+0.5, chartY+chartH);
         ctx.stroke();
 
-        ctx.fillStyle    = axisTextColor;
-        ctx.textAlign    = 'right';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(formatNumber(tv, compact), chartX-8, ty);
-      }
-
-      // Bars
-      var groupWidth = chartW / n;
-      var barGap     = Math.max(6, groupWidth * 0.28);
-      var barWidth   = groupWidth - barGap;
-
-      for (var bi=0; bi<n; bi++) {
-        var bx = chartX + bi*groupWidth + barGap/2;
-        var bh = (values[bi] / axis.max) * chartH;
-        if (bh < 1 && values[bi] > 0) bh = 1;
-        var by = chartY + chartH - bh;
-
-        // Bar fill with gradient
-        var grad = ctx.createLinearGradient(bx, by, bx, by+bh);
-        grad.addColorStop(0, barColor);
-        grad.addColorStop(1, hexToRgba(barColor, 0.75));
-        ctx.fillStyle = grad;
-        roundedRectTop(ctx, bx, by, barWidth, bh, barRadius);
-        ctx.fill();
-
-        // Value label
-        if (showValues && bh > 0) {
-          ctx.font = '12px "Plus Jakarta Sans", system-ui, sans-serif';
-          ctx.fillStyle    = titleColor;
-          ctx.textAlign    = 'center';
-          ctx.textBaseline = 'bottom';
-          ctx.fillText(formatNumber(values[bi], compact), bx+barWidth/2, by-2);
-          ctx.font = FONT;
-        }
-
-        // X axis label
         ctx.fillStyle    = axisTextColor;
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'top';
         ctx.font = FONT;
-        ctx.fillText(fmtXLabel(labels[bi]), chartX+bi*groupWidth+groupWidth/2, chartY+chartH+10);
+        ctx.fillText(formatNumber(tv, compact), tx, chartY+chartH+8);
       }
 
-      // Baseline
-      ctx.strokeStyle = borderColor; ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(chartX,        Math.round(chartY+chartH)+0.5);
-      ctx.lineTo(chartX+chartW, Math.round(chartY+chartH)+0.5);
-      ctx.stroke();
+      // ── Bars ─────────────────────────────────────────────────────────────
+      var groupHeight = chartH / n;
+      var barGap      = Math.max(4, groupHeight * 0.28);
+      var barH        = groupHeight - barGap;
 
-      // Left axis border
+      for (var bi=0; bi<n; bi++) {
+        var by  = chartY + bi*groupHeight + barGap/2;
+        var bw  = (values[bi] / axis.max) * chartW;
+        if (bw < 1 && values[bi] > 0) bw = 1;
+
+        // Bar fill with left→right gradient
+        var grad = ctx.createLinearGradient(chartX, 0, chartX+chartW, 0);
+        grad.addColorStop(0, barColor);
+        grad.addColorStop(1, hexToRgba(barColor, 0.72));
+        ctx.fillStyle = grad;
+        roundedRectRight(ctx, chartX, by, bw, barH, barRadius);
+        ctx.fill();
+
+        // Category label (left axis, right-aligned)
+        ctx.fillStyle    = axisTextColor;
+        ctx.textAlign    = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.font = FONT;
+        ctx.fillText(truncateLabel(ctx, labels[bi], leftPad - 10), chartX - 8, by + barH/2);
+
+        // Value label at bar end
+        if (showValues && bw > 0) {
+          ctx.fillStyle    = titleColor;
+          ctx.textAlign    = 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(formatNumber(values[bi], compact), chartX + bw + 6, by + barH/2);
+        }
+      }
+
+      // ── Axis lines ────────────────────────────────────────────────────────
+      ctx.strokeStyle = borderColor; ctx.lineWidth = 1;
+      // Left vertical axis
       ctx.beginPath();
       ctx.moveTo(Math.round(chartX)+0.5, chartY);
       ctx.lineTo(Math.round(chartX)+0.5, chartY+chartH);
+      ctx.stroke();
+      // Bottom horizontal baseline
+      ctx.beginPath();
+      ctx.moveTo(chartX, Math.round(chartY+chartH)+0.5);
+      ctx.lineTo(chartX+chartW, Math.round(chartY+chartH)+0.5);
       ctx.stroke();
 
       // ── Hover overlay + tooltip ───────────────────────────────────────────
@@ -304,16 +315,19 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
       canvas.addEventListener('mousemove', function(e) {
         var rect = canvas.getBoundingClientRect();
         var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-        var idx = Math.floor((mx - chartX) / groupWidth);
-        if (idx < 0 || idx >= n || mx < chartX || mx > chartX+chartW || my < chartY-20 || my > chartY+chartH+10) {
+        var idx = Math.floor((my - chartY) / groupHeight);
+        if (idx < 0 || idx >= n || my < chartY || my > chartY+chartH || mx < 0 || mx > cw) {
           tooltip.style.opacity = '0'; octx.clearRect(0,0,cw,ch); lastIdx = -1; return;
         }
         if (idx !== lastIdx) {
           lastIdx = idx; octx.clearRect(0,0,cw,ch);
-          var hx = chartX + idx*groupWidth + groupWidth/2;
+          var hy = chartY + idx*groupHeight + groupHeight/2;
           octx.strokeStyle = hexToRgba(axisTextColor, 0.2);
           octx.lineWidth = 1; octx.setLineDash([4,3]);
-          octx.beginPath(); octx.moveTo(Math.round(hx)+0.5, chartY); octx.lineTo(Math.round(hx)+0.5, chartY+chartH); octx.stroke();
+          octx.beginPath();
+          octx.moveTo(chartX, Math.round(hy)+0.5);
+          octx.lineTo(chartX+chartW, Math.round(hy)+0.5);
+          octx.stroke();
           octx.setLineDash([]);
         }
         tooltip.innerHTML = '<div style="font-weight:600;margin-bottom:4px">'+labels[idx]+'</div>'

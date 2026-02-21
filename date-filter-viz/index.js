@@ -345,6 +345,31 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     });
   }
 
+  // ── Error state (visible in-iframe diagnostics) ─────────────────────────────
+  function renderError(err) {
+    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
+    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
+    document.body.innerHTML = '';
+    var card = mk('div', {
+      position:'absolute', inset:'0',
+      display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center',
+      background:'#FEF2F2', border:'1px solid #FECACA', borderRadius:'12px',
+      padding:'16px', boxSizing:'border-box',
+      fontFamily:'"Plus Jakarta Sans", system-ui, sans-serif'
+    });
+    var title = mk('div', { fontSize:'11px', fontWeight:'700', color:'#991B1B', marginBottom:'6px' });
+    title.textContent = 'Date Filter Error';
+    var msg = mk('div', { fontSize:'11px', color:'#B91C1C', wordBreak:'break-word', textAlign:'center', lineHeight:'1.4' });
+    msg.textContent = String(err && err.message ? err.message : err);
+    var hint = mk('div', { fontSize:'10px', color:'#DC2626', opacity:'0.7', marginTop:'8px', textAlign:'center' });
+    hint.textContent = 'Check browser console (F12) for details. Ensure the interaction is enabled in the Setup tab.';
+    card.appendChild(title);
+    card.appendChild(msg);
+    card.appendChild(hint);
+    document.body.appendChild(card);
+    console.error('[date-filter-viz]', err);
+  }
+
   // ── Empty state ───────────────────────────────────────────────────────────────
   function renderEmpty(cardBg, border, textColor, title) {
     document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
@@ -368,6 +393,23 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     return e;
   }
 
-  dscc.subscribeToData(drawViz, { transform: dscc.tableTransform });
+  // ── Boot: manual listener with error visibility ────────────────────────────
+  // dscc.subscribeToData swallows transform errors silently — if tableTransform
+  // crashes (e.g. interaction value undefined), drawViz never runs and the viz
+  // is blank with no feedback. This manual listener does the same thing but
+  // wraps everything in try/catch so errors render visually in the iframe.
+  (function boot() {
+    var cid = new URLSearchParams(window.location.search).get('dscId');
+    window.addEventListener('message', function (e) {
+      if (!e.data || e.data.type !== 'RENDER') return;
+      try {
+        var data = dscc.tableTransform(e.data);
+        drawViz(data);
+      } catch (err) {
+        renderError(err);
+      }
+    });
+    window.parent.postMessage({ componentId: cid, type: 'vizReady' }, '*');
+  })();
 
 })();

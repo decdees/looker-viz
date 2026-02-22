@@ -110,9 +110,15 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     var rows    = table.rows    || [];
 
     // Find dimension column
-    var dimIdx = 0;
+    var dimIdx = -1;
     for (var h = 0; h < headers.length; h++) {
       if (headers[h].configId === 'dateDimension') { dimIdx = h; break; }
+    }
+
+    // If no dateDimension found, show empty state (dimension not added yet)
+    if (dimIdx === -1 || rows.length === 0) {
+      renderEmpty(cardBg, border, textColor, title);
+      return;
     }
 
     // Store the real field id for sendInteraction
@@ -131,21 +137,22 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
     items.sort(function(a,b){ return a.date - b.date; });
 
     // Expand allItems (never shrink — survive filtered redraws)
-    if (items.length > 0) {
-      if (allItems.length === 0) {
-        allItems = items;
-        fromIdx  = 0;
-        toIdx    = allItems.length - 1;
-      } else {
-        var oldKeys = {};
-        allItems.forEach(function(i){ oldKeys[i.raw] = true; });
-        items.forEach(function(i){ if (!oldKeys[i.raw]) allItems.push(i); });
-        allItems.sort(function(a,b){ return a.date - b.date; });
-        fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
-        toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
-      }
+    // Re-initialize if we have data but allItems is empty (refresh / mode change)
+    if (items.length > 0 && allItems.length === 0) {
+      allItems = items;
+      fromIdx  = 0;
+      toIdx    = allItems.length - 1;
+    } else if (items.length > 0 && allItems.length > 0) {
+      // Merge new items into allItems
+      var oldKeys = {};
+      allItems.forEach(function(i){ oldKeys[i.raw] = true; });
+      items.forEach(function(i){ if (!oldKeys[i.raw]) allItems.push(i); });
+      allItems.sort(function(a,b){ return a.date - b.date; });
+      fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
+      toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
     }
 
+    // No valid date items found after parsing
     if (allItems.length === 0) {
       renderEmpty(cardBg, border, textColor, title);
       return;

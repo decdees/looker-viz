@@ -1,8 +1,8 @@
 {
   "data": [
     {
-      "id": "concepts",
-      "label": "Concepts",
+      "id": "dateDimension",
+      "label": "Date Field",
       "elements": [
         {
           "id": "dateDimension",
@@ -15,23 +15,23 @@
   ],
   "style": [
     {
-      "id": "filterStyle",
-      "label": "Filter",
+      "id": "appearance",
+      "label": "Appearance",
       "elements": [
         {
           "id": "filterTitle",
-          "label": "Title",
+          "label": "Filter Title",
           "type": "TEXTINPUT",
-          "defaultValue": "Date Range Filter"
+          "defaultValue": "Date Range"
         },
         {
           "id": "primaryColor",
-          "label": "Accent Color",
+          "label": "Primary Color",
           "type": "FILL",
           "defaultValue": { "color": "2563EB" }
         },
         {
-          "id": "cardBg",
+          "id": "bgColor",
           "label": "Background",
           "type": "FILL",
           "defaultValue": { "color": "FFFFFF" }
@@ -50,7 +50,7 @@
         },
         {
           "id": "mutedColor",
-          "label": "Muted Text Color",
+          "label": "Muted Text",
           "type": "FILL",
           "defaultValue": { "color": "6B7280" }
         }

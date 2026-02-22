@@ -25,398 +25,489 @@ var a=R(/*! ./types */"./src/types.ts");!function(e){for(var R in e)N.hasOwnProp
   \**********************/
 /*! no static exports found */function(e,R,t){"use strict";var C,n,E,r,o,N,i;Object.defineProperty(R,"__esModule",{value:!0}),(C=R.ConceptType||(R.ConceptType={})).METRIC="METRIC",C.DIMENSION="DIMENSION",(R.MessageType||(R.MessageType={})).RENDER="RENDER",(n=R.FieldType||(R.FieldType={})).YEAR="YEAR",n.YEAR_QUARTER="YEAR_QUARTER",n.YEAR_MONTH="YEAR_MONTH",n.YEAR_WEEK="YEAR_WEEK",n.YEAR_MONTH_DAY="YEAR_MONTH_DAY",n.YEAR_MONTH_DAY_HOUR="YEAR_MONTH_DAY_HOUR",n.QUARTER="QUARTER",n.MONTH="MONTH",n.WEEK="WEEK",n.MONTH_DAY="MONTH_DAY",n.DAY_OF_WEEK="DAY_OF_WEEK",n.DAY="DAY",n.HOUR="HOUR",n.MINUTE="MINUTE",n.DURATION="DURATION",n.COUNTRY="COUNTRY",n.COUNTRY_CODE="COUNTRY_CODE",n.CONTINENT="CONTINENT",n.CONTINENT_CODE="CONTINENT_CODE",n.SUB_CONTINENT="SUB_CONTINENT",n.SUB_CONTINENT_CODE="SUB_CONTINENT_CODE",n.REGION="REGION",n.REGION_CODE="REGION_CODE",n.CITY="CITY",n.CITY_CODE="CITY_CODE",n.METRO_CODE="METRO_CODE",n.LATITUDE_LONGITUDE="LATITUDE_LONGITUDE",n.NUMBER="NUMBER",n.PERCENT="PERCENT",n.TEXT="TEXT",n.BOOLEAN="BOOLEAN",n.URL="URL",n.IMAGE="IMAGE",n.CURRENCY_AED="CURRENCY_AED",n.CURRENCY_ALL="CURRENCY_ALL",n.CURRENCY_ARS="CURRENCY_ARS",n.CURRENCY_AUD="CURRENCY_AUD",n.CURRENCY_BDT="CURRENCY_BDT",n.CURRENCY_BGN="CURRENCY_BGN",n.CURRENCY_BOB="CURRENCY_BOB",n.CURRENCY_BRL="CURRENCY_BRL",n.CURRENCY_CAD="CURRENCY_CAD",n.CURRENCY_CDF="CURRENCY_CDF",n.CURRENCY_CHF="CURRENCY_CHF",n.CURRENCY_CLP="CURRENCY_CLP",n.CURRENCY_CNY="CURRENCY_CNY",n.CURRENCY_COP="CURRENCY_COP",n.CURRENCY_CRC="CURRENCY_CRC",n.CURRENCY_CZK="CURRENCY_CZK",n.CURRENCY_DKK="CURRENCY_DKK",n.CURRENCY_DOP="CURRENCY_DOP",n.CURRENCY_EGP="CURRENCY_EGP",n.CURRENCY_ETB="CURRENCY_ETB",n.CURRENCY_EUR="CURRENCY_EUR",n.CURRENCY_GBP="CURRENCY_GBP",n.CURRENCY_HKD="CURRENCY_HKD",n.CURRENCY_HRK="CURRENCY_HRK",n.CURRENCY_HUF="CURRENCY_HUF",n.CURRENCY_IDR="CURRENCY_IDR",n.CURRENCY_ILS="CURRENCY_ILS",n.CURRENCY_INR="CURRENCY_INR",n.CURRENCY_IRR="CURRENCY_IRR",n.CURRENCY_ISK="CURRENCY_ISK",n.CURRENCY_JMD="CURRENCY_JMD",n.CURRENCY_JPY="CURRENCY_JPY",n.CURRENCY_KRW="CURRENCY_KRW",n.CURRENCY_LKR="CURRENCY_LKR",n.CURRENCY_LTL="CURRENCY_LTL",n.CURRENCY_MNT="CURRENCY_MNT",n.CURRENCY_MVR="CURRENCY_MVR",n.CURRENCY_MXN="CURRENCY_MXN",n.CURRENCY_MYR="CURRENCY_MYR",n.CURRENCY_NOK="CURRENCY_NOK",n.CURRENCY_NZD="CURRENCY_NZD",n.CURRENCY_PAB="CURRENCY_PAB",n.CURRENCY_PEN="CURRENCY_PEN",n.CURRENCY_PHP="CURRENCY_PHP",n.CURRENCY_PKR="CURRENCY_PKR",n.CURRENCY_PLN="CURRENCY_PLN",n.CURRENCY_RON="CURRENCY_RON",n.CURRENCY_RSD="CURRENCY_RSD",n.CURRENCY_RUB="CURRENCY_RUB",n.CURRENCY_SAR="CURRENCY_SAR",n.CURRENCY_SEK="CURRENCY_SEK",n.CURRENCY_SGD="CURRENCY_SGD",n.CURRENCY_THB="CURRENCY_THB",n.CURRENCY_TRY="CURRENCY_TRY",n.CURRENCY_TWD="CURRENCY_TWD",n.CURRENCY_TZS="CURRENCY_TZS",n.CURRENCY_UAH="CURRENCY_UAH",n.CURRENCY_USD="CURRENCY_USD",n.CURRENCY_UYU="CURRENCY_UYU",n.CURRENCY_VEF="CURRENCY_VEF",n.CURRENCY_VND="CURRENCY_VND",n.CURRENCY_YER="CURRENCY_YER",n.CURRENCY_ZAR="CURRENCY_ZAR",(E=R.TableType||(R.TableType={})).DEFAULT="DEFAULT",E.COMPARISON="COMPARISON",E.SUMMARY="SUMMARY",(r=R.DateRangeType||(R.DateRangeType={})).DEFAULT="DEFAULT",r.COMPARISON="COMPARISON",(o=R.ConfigDataElementType||(R.ConfigDataElementType={})).METRIC="METRIC",o.DIMENSION="DIMENSION",o.MAX_RESULTS="MAX_RESULTS",(N=R.ConfigStyleElementType||(R.ConfigStyleElementType={})).TEXTINPUT="TEXTINPUT",N.SELECT_SINGLE="SELECT_SINGLE",N.CHECKBOX="CHECKBOX",N.FONT_COLOR="FONT_COLOR",N.FONT_SIZE="FONT_SIZE",N.FONT_FAMILY="FONT_FAMILY",N.FILL_COLOR="FILL_COLOR",N.BORDER_COLOR="BORDER_COLOR",N.AXIS_COLOR="AXIS_COLOR",N.GRID_COLOR="GRID_COLOR",N.OPACITY="OPACITY",N.LINE_WEIGHT="LINE_WEIGHT",N.LINE_STYLE="LINE_STYLE",N.BORDER_RADIUS="BORDER_RADIUS",N.INTERVAL="INTERVAL",N.SELECT_RADIO="SELECT_RADIO",(R.DSInteractionType||(R.DSInteractionType={})).FILTER="FILTER",(i=R.ToDSMessageType||(R.ToDSMessageType={})).VIZ_READY="vizReady",i.INTERACTION="vizAction",(R.InteractionType||(R.InteractionType={})).FILTER="FILTER"}},n.c=C,n.d=function(e,R,t){n.o(e,R)||Object.defineProperty(e,R,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(R,e){if(1&e&&(R=n(R)),8&e)return R;if(4&e&&"object"==typeof R&&R&&R.__esModule)return R;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:R}),2&e&&"string"!=typeof R)for(var C in R)n.d(t,C,function(e){return R[e]}.bind(null,C));return t},n.n=function(e){var R=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(R,"a",R),R},n.o=function(e,R){return Object.prototype.hasOwnProperty.call(e,R)},n.p="",n(n.s="./src/index.ts");function n(e){if(C[e])return C[e].exports;var R=C[e]={i:e,l:!1,exports:{}};return t[e].call(R.exports,R,R.exports,n),R.l=!0,R.exports}var t,C});/**
  * Date Range Filter - Looker Studio Community Visualization
- * Compact horizontal toolbar: [📅 Title] [Jan 25] [←slider→] [Jan 26] [Reset] [Apply]
+ * Modern slider-style date range picker with cross-viz filtering
  */
 
 (function () {
   'use strict';
 
-  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // State
+  var dates = [];           // Array of {raw, date, label}
+  var startIdx = 0;
+  var endIdx = 0;
+  var isDragging = false;
+  var dragTarget = null;    // 'start' or 'end'
+  var canvas, ctx;
+  var sliderWidth, sliderHeight;
+  var dpr = window.devicePixelRatio || 1;
+  var fieldId = null;
+  var interactionId = 'dateFilter';
+  var FILTER = dscc.InteractionType.FILTER;
 
-  // Module-level state — persists across drawViz calls within the same session
-  var allItems   = [];   // [{raw, date}] — only ever grows (survives filtered redraws)
-  var fromIdx    = 0;
-  var toIdx      = 0;
-  var isFiltered = false;
-  var _mmHandler = null;
-  var _muHandler = null;
-  var _fieldId   = null; // actual data-source field id for sendInteraction
+  // Style config
+  var styles = {
+    primary: '#2563EB',
+    bg: '#FFFFFF',
+    border: '#E5E7EB',
+    text: '#111827',
+    muted: '#6B7280',
+    track: '#E5E7EB',
+    trackActive: '#2563EB',
+    thumb: '#FFFFFF',
+    title: 'Date Range'
+  };
 
-  // ── Helpers ──────────────────────────────────────────────────────────────────
+  // Parse various date formats
+  function parseDate(raw) {
+    if (raw == null) return null;
+    var s = String(raw).trim();
+    // YYYYMM
+    if (/^\d{6}$/.test(s)) s = s.slice(0,4) + '-' + s.slice(4,6) + '-01';
+    // YYYYMMDD
+    else if (/^\d{8}$/.test(s)) s = s.slice(0,4) + '-' + s.slice(4,6) + '-' + s.slice(6,8);
+    // YYYY/MM/DD
+    else if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g, '-');
+    // MM/DD/YYYY
+    else if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) {
+      var p = s.split('/');
+      s = p[2] + '-' + p[0] + '-' + p[1];
+    }
+    
+    var d = new Date(s + (s.includes('T') ? '' : 'T00:00:00'));
+    if (!isNaN(d)) return d;
+    d = new Date(raw);
+    return isNaN(d) ? null : d;
+  }
 
-  function getColor(obj, fallback) {
-    if (obj && obj.value) {
-      var c = obj.value.color || obj.value;
+  // Format date for display
+  function formatDate(date, raw) {
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var mo = months[date.getMonth()];
+    var yr = String(date.getFullYear()).slice(2);
+    // YYYYMM format shows month only
+    if (/^\d{6}$/.test(String(raw).trim())) {
+      return mo + " '" + yr;
+    }
+    return date.getDate() + ' ' + mo + " '" + yr;
+  }
+
+  // Initialize the visualization
+  function init(data) {
+    var s = data.style || {};
+    styles.primary = getColor(s.primaryColor, '#2563EB');
+    styles.bg = getColor(s.bgColor, '#FFFFFF');
+    styles.border = getColor(s.borderColor, '#E5E7EB');
+    styles.text = getColor(s.textColor, '#111827');
+    styles.muted = getColor(s.mutedColor, '#6B7280');
+    styles.trackActive = styles.primary;
+    styles.title = (s.filterTitle && s.filterTitle.value) || 'Date Range';
+
+    // Get field ID from config
+    var fields = data.fields || {};
+    var dateField = fields.dateDimension;
+    if (dateField && dateField[0]) {
+      fieldId = dateField[0].id;
+    }
+
+    // Get current filter state if any
+    var interactions = data.interactions || {};
+    var currentFilter = interactions[interactionId];
+    var filterValues = [];
+    if (currentFilter && currentFilter.value && currentFilter.value.data) {
+      filterValues = currentFilter.value.data.values || [];
+      filterValues = filterValues.map(function(v) { return v[0]; });
+    }
+
+    // Parse dates from data
+    var table = (data.tables || {}).DEFAULT || {};
+    var headers = table.headers || [];
+    var rows = table.rows || [];
+
+    // Find date dimension column
+    var dateCol = -1;
+    for (var i = 0; i < headers.length; i++) {
+      if (headers[i].configId === 'dateDimension') {
+        dateCol = i;
+        // Update fieldId if found in headers
+        if (headers[i].id) fieldId = headers[i].id;
+        break;
+      }
+    }
+
+    if (dateCol === -1 || rows.length === 0) {
+      renderEmpty();
+      return;
+    }
+
+    // Extract unique dates
+    var seen = {};
+    dates = [];
+    for (var r = 0; r < rows.length; r++) {
+      var raw = rows[r][dateCol];
+      if (raw == null || seen[raw]) continue;
+      var d = parseDate(raw);
+      if (d) {
+        seen[raw] = true;
+        dates.push({
+          raw: raw,
+          date: d,
+          label: formatDate(d, raw)
+        });
+      }
+    }
+
+    if (dates.length === 0) {
+      renderEmpty();
+      return;
+    }
+
+    // Sort by date
+    dates.sort(function(a, b) { return a.date - b.date; });
+
+    // Set initial range
+    if (filterValues.length > 0) {
+      // Find indices for current filter values
+      var startRaw = filterValues[0];
+      var endRaw = filterValues[filterValues.length - 1];
+      startIdx = 0;
+      endIdx = dates.length - 1;
+      for (var j = 0; j < dates.length; j++) {
+        if (dates[j].raw === startRaw) startIdx = j;
+        if (dates[j].raw === endRaw) endIdx = j;
+      }
+    } else {
+      startIdx = 0;
+      endIdx = dates.length - 1;
+    }
+
+    buildUI();
+  }
+
+  function getColor(styleObj, fallback) {
+    if (styleObj && styleObj.value) {
+      var c = styleObj.value.color || styleObj.value;
       if (typeof c === 'string') return '#' + c.replace('#', '');
     }
     return fallback;
   }
 
+  function renderEmpty() {
+    document.body.innerHTML = '';
+    document.body.style.cssText = 'margin:0;padding:16px;font-family:"Plus Jakarta Sans",system-ui,sans-serif;background:transparent;';
+    var el = document.createElement('div');
+    el.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;color:' + styles.muted + ';font-size:13px;';
+    el.textContent = 'Add a date dimension to use this filter';
+    document.body.appendChild(el);
+  }
+
+  function buildUI() {
+    document.body.innerHTML = '';
+    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
+    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;font-family:"Plus Jakarta Sans",system-ui,sans-serif;';
+
+    // Container
+    var container = document.createElement('div');
+    container.style.cssText = 'height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 16px;box-sizing:border-box;';
+
+    // Header with title and apply button
+    var header = document.createElement('div');
+    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;';
+
+    var titleEl = document.createElement('div');
+    titleEl.style.cssText = 'font-size:12px;font-weight:600;color:' + styles.text + ';';
+    titleEl.textContent = styles.title;
+
+    var badge = document.createElement('span');
+    badge.id = 'filter-badge';
+    badge.style.cssText = 'font-size:10px;font-weight:600;padding:2px 8px;border-radius:12px;background:' + hexToRgba(styles.primary, 0.1) + ';color:' + styles.primary + ';display:none;';
+    badge.textContent = 'Filtered';
+
+    header.appendChild(titleEl);
+    header.appendChild(badge);
+    container.appendChild(header);
+
+    // Date labels row
+    var labelsRow = document.createElement('div');
+    labelsRow.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;';
+
+    var startLabel = document.createElement('div');
+    startLabel.id = 'start-label';
+    startLabel.style.cssText = 'font-size:12px;font-weight:500;color:' + styles.text + ';';
+
+    var endLabel = document.createElement('div');
+    endLabel.id = 'end-label';
+    endLabel.style.cssText = 'font-size:12px;font-weight:500;color:' + styles.text + ';';
+
+    labelsRow.appendChild(startLabel);
+    labelsRow.appendChild(endLabel);
+    container.appendChild(labelsRow);
+
+    // Canvas slider container
+    var sliderContainer = document.createElement('div');
+    sliderContainer.style.cssText = 'position:relative;height:32px;margin-bottom:12px;';
+
+    canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;';
+    sliderContainer.appendChild(canvas);
+    container.appendChild(sliderContainer);
+
+    // Buttons row
+    var buttonsRow = document.createElement('div');
+    buttonsRow.style.cssText = 'display:flex;align-items:center;gap:8px;';
+
+    var resetBtn = document.createElement('button');
+    resetBtn.textContent = 'Reset';
+    resetBtn.style.cssText = 'flex:1;padding:6px 12px;border:1px solid ' + styles.border + ';border-radius:6px;background:' + styles.bg + ';color:' + styles.muted + ';font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;';
+    resetBtn.onclick = onReset;
+
+    var applyBtn = document.createElement('button');
+    applyBtn.textContent = 'Apply Filter';
+    applyBtn.style.cssText = 'flex:1;padding:6px 12px;border:none;border-radius:6px;background:' + styles.primary + ';color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;';
+    applyBtn.onclick = onApply;
+
+    buttonsRow.appendChild(resetBtn);
+    buttonsRow.appendChild(applyBtn);
+    container.appendChild(buttonsRow);
+
+    document.body.appendChild(container);
+
+    // Initialize canvas
+    var rect = sliderContainer.getBoundingClientRect();
+    sliderWidth = rect.width;
+    sliderHeight = rect.height;
+    canvas.width = sliderWidth * dpr;
+    canvas.height = sliderHeight * dpr;
+    ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    // Event listeners
+    canvas.addEventListener('mousedown', onMouseDown);
+    canvas.addEventListener('touchstart', onTouchStart, {passive: false});
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchmove', onTouchMove, {passive: false});
+    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('touchend', onMouseUp);
+
+    // Handle resize
+    window.addEventListener('resize', function() {
+      var r = sliderContainer.getBoundingClientRect();
+      sliderWidth = r.width;
+      sliderHeight = r.height;
+      canvas.width = sliderWidth * dpr;
+      canvas.height = sliderHeight * dpr;
+      ctx.scale(dpr, dpr);
+      draw();
+    });
+
+    updateLabels();
+    draw();
+
+    // Show badge if filtered
+    if (startIdx > 0 || endIdx < dates.length - 1) {
+      badge.style.display = 'inline-block';
+    }
+  }
+
   function hexToRgba(hex, alpha) {
     hex = hex.replace('#', '');
-    return 'rgba(' + parseInt(hex.slice(0,2),16) + ','
-                   + parseInt(hex.slice(2,4),16) + ','
-                   + parseInt(hex.slice(4,6),16) + ',' + alpha + ')';
+    return 'rgba(' + parseInt(hex.slice(0,2),16) + ',' + parseInt(hex.slice(2,4),16) + ',' + parseInt(hex.slice(4,6),16) + ',' + alpha + ')';
   }
 
-  function parseDate(raw) {
-    if (raw == null) return null;
-    var s = String(raw).trim();
-    if (/^\d{6}$/.test(s))   s = s.slice(0,4)+'-'+s.slice(4,6)+'-01';
-    else if (/^\d{8}$/.test(s)) s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
-    else if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) s = s.replace(/\//g,'-');
-    else if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) {
-      var p = s.split('/'); s = p[2]+'-'+p[0]+'-'+p[1];
+  function updateLabels() {
+    var startLabel = document.getElementById('start-label');
+    var endLabel = document.getElementById('end-label');
+    if (startLabel) startLabel.textContent = dates[startIdx].label;
+    if (endLabel) endLabel.textContent = dates[endIdx].label;
+  }
+
+  function getX(index) {
+    var padding = 16;
+    var available = sliderWidth - (padding * 2);
+    if (dates.length <= 1) return padding;
+    return padding + (index / (dates.length - 1)) * available;
+  }
+
+  function getIndex(x) {
+    var padding = 16;
+    var available = sliderWidth - (padding * 2);
+    var ratio = Math.max(0, Math.min(1, (x - padding) / available));
+    return Math.round(ratio * (dates.length - 1));
+  }
+
+  function draw() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, sliderWidth, sliderHeight);
+
+    var cy = sliderHeight / 2;
+    var trackHeight = 4;
+    var thumbRadius = 10;
+
+    // Draw track background
+    ctx.fillStyle = styles.track;
+    roundRect(ctx, 16, cy - trackHeight/2, sliderWidth - 32, trackHeight, trackHeight/2);
+    ctx.fill();
+
+    // Draw active track
+    var x1 = getX(startIdx);
+    var x2 = getX(endIdx);
+    ctx.fillStyle = styles.trackActive;
+    roundRect(ctx, x1, cy - trackHeight/2, x2 - x1, trackHeight, trackHeight/2);
+    ctx.fill();
+
+    // Draw ticks
+    if (dates.length <= 30) {
+      for (var i = 0; i < dates.length; i++) {
+        var tx = getX(i);
+        var inRange = i >= startIdx && i <= endIdx;
+        ctx.beginPath();
+        ctx.arc(tx, cy, 2, 0, Math.PI * 2);
+        ctx.fillStyle = inRange ? hexToRgba(styles.primary, 0.5) : hexToRgba(styles.muted, 0.3);
+        ctx.fill();
+      }
     }
-    var d = new Date(s + (s.length === 7 ? '-01' : '') + (s.includes('T') ? '' : 'T00:00:00'));
-    if (!isNaN(d)) return d;
-    d = new Date(raw); return isNaN(d) ? null : d;
+
+    // Draw thumbs
+    [x1, x2].forEach(function(x, idx) {
+      // Shadow
+      ctx.shadowColor = 'rgba(0,0,0,0.15)';
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetY = 2;
+      
+      // Thumb circle
+      ctx.beginPath();
+      ctx.arc(x, cy, thumbRadius, 0, Math.PI * 2);
+      ctx.fillStyle = styles.thumb;
+      ctx.fill();
+      
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
+
+      // Border
+      ctx.beginPath();
+      ctx.arc(x, cy, thumbRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = styles.primary;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Inner dot
+      ctx.beginPath();
+      ctx.arc(x, cy, 3, 0, Math.PI * 2);
+      ctx.fillStyle = styles.primary;
+      ctx.fill();
+    });
   }
 
-  function fmtShort(item) {
-    if (!item) return '—';
-    var d = item.date;
-    var mo = MONTHS[d.getMonth()];
-    var yr = String(d.getFullYear()).slice(2);
-    if (/^\d{6}$/.test(String(item.raw).trim())) return mo + ' \'' + yr;
-    return d.getDate() + ' ' + mo + ' \'' + yr;
-  }
-
-  function roundRectPath(ctx, x, y, w, h, r) {
-    if (w < 2*r) r = w/2; if (h < 2*r) r = h/2;
+  function roundRect(ctx, x, y, w, h, r) {
+    if (w < 2 * r) r = w / 2;
+    if (h < 2 * r) r = h / 2;
     ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.arcTo(x+w, y, x+w, y+h, r);
-    ctx.arcTo(x+w, y+h, x, y+h, r);
-    ctx.arcTo(x, y+h, x, y, r);
-    ctx.arcTo(x, y, x+w, y, r);
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
     ctx.closePath();
   }
 
-  // ── Main ─────────────────────────────────────────────────────────────────────
-
-  function drawViz(data) {
-    var s = data.style || {};
-
-    var primary   = getColor(s.primaryColor, '#2563EB');
-    var cardBg    = getColor(s.cardBg,       '#FFFFFF');
-    var border    = getColor(s.borderColor,  '#E5E7EB');
-    var textColor = getColor(s.textColor,    '#111827');
-    var muted     = getColor(s.mutedColor,   '#6B7280');
-    var title     = (s.filterTitle && s.filterTitle.value) || 'Date Range Filter';
-
-    var table   = (data.tables || {}).DEFAULT || {};
-    var headers = table.headers || [];
-    var rows    = table.rows    || [];
-
-    // Find dimension column
-    var dimIdx = -1;
-    for (var h = 0; h < headers.length; h++) {
-      if (headers[h].configId === 'dateDimension') { dimIdx = h; break; }
-    }
-
-    // If no dateDimension found, show empty state (dimension not added yet)
-    if (dimIdx === -1 || rows.length === 0) {
-      renderEmpty(cardBg, border, textColor, title);
-      return;
-    }
-
-    // Store the real field id for sendInteraction
-    if (headers[dimIdx] && headers[dimIdx].id) {
-      _fieldId = headers[dimIdx].id;
-    }
-
-    // Parse unique dates from current data
-    var seen = {}, items = [];
-    for (var r = 0; r < rows.length; r++) {
-      var raw = rows[r][dimIdx];
-      if (raw == null || seen[raw]) continue;
-      var d = parseDate(raw);
-      if (d) { seen[raw] = true; items.push({ raw: raw, date: d }); }
-    }
-    items.sort(function(a,b){ return a.date - b.date; });
-
-    // Expand allItems (never shrink — survive filtered redraws)
-    // Re-initialize if we have data but allItems is empty (refresh / mode change)
-    if (items.length > 0 && allItems.length === 0) {
-      allItems = items;
-      fromIdx  = 0;
-      toIdx    = allItems.length - 1;
-    } else if (items.length > 0 && allItems.length > 0) {
-      // Merge new items into allItems
-      var oldKeys = {};
-      allItems.forEach(function(i){ oldKeys[i.raw] = true; });
-      items.forEach(function(i){ if (!oldKeys[i.raw]) allItems.push(i); });
-      allItems.sort(function(a,b){ return a.date - b.date; });
-      fromIdx = Math.max(0, Math.min(fromIdx, allItems.length - 1));
-      toIdx   = Math.max(0, Math.min(toIdx,   allItems.length - 1));
-    }
-
-    // No valid date items found after parsing
-    if (allItems.length === 0) {
-      renderEmpty(cardBg, border, textColor, title);
-      return;
-    }
-
-    var interaction = (data.interactions || {}).dateFilter || null;
-    buildUI(primary, cardBg, border, textColor, muted, title, interaction);
+  function onMouseDown(e) {
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    handleStart(x, y);
   }
 
-  // ── UI ───────────────────────────────────────────────────────────────────────
+  function onTouchStart(e) {
+    e.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    var touch = e.touches[0];
+    var x = touch.clientX - rect.left;
+    var y = touch.clientY - rect.top;
+    handleStart(x, y);
+  }
 
-  function buildUI(primary, cardBg, border, textColor, muted, title, interaction) {
-    if (_mmHandler) { document.removeEventListener('mousemove', _mmHandler); _mmHandler = null; }
-    if (_muHandler) { document.removeEventListener('mouseup',   _muHandler); _muHandler = null; }
+  function handleStart(x, y) {
+    var x1 = getX(startIdx);
+    var x2 = getX(endIdx);
+    var cy = sliderHeight / 2;
 
-    // Fill the entire iframe
-    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
-    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
+    var d1 = Math.abs(x - x1);
+    var d2 = Math.abs(x - x2);
 
-    document.body.innerHTML = '';
+    if (Math.min(d1, d2) < 20) {
+      isDragging = true;
+      dragTarget = d1 <= d2 ? 'start' : 'end';
+      canvas.style.cursor = 'grabbing';
+    }
+  }
 
-    // Card fills the viewport absolutely
-    var card = mk('div', {
-      position: 'absolute', inset: '0',
-      display: 'flex', flexDirection: 'column', justifyContent: 'center',
-      background: cardBg,
-      border: '1px solid ' + border,
-      borderRadius: '12px',
-      boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
-      padding: '10px 16px',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif'
-    });
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    handleMove(x);
+  }
 
-    // ── Row 1: Title + "Filtered" badge ──────────────────────────────────────
-    var row1 = mk('div', { display:'flex', alignItems:'center', gap:'6px', marginBottom:'8px', flexShrink:'0' });
+  function onTouchMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    var touch = e.touches[0];
+    var x = touch.clientX - rect.left;
+    handleMove(x);
+  }
 
-    var icon = document.createElement('div');
-    icon.style.cssText = 'display:flex;flex-shrink:0;color:' + primary;
-    icon.innerHTML = '<svg width="13" height="13" viewBox="0 0 14 14" fill="none">'
-      + '<rect x="0.75" y="1.75" width="12.5" height="11.5" rx="1.75" stroke="'+primary+'" stroke-width="1.5"/>'
-      + '<path d="M0.75 5.5h12.5" stroke="'+primary+'" stroke-width="1.5"/>'
-      + '<path d="M4.5 0.5v2.5M9.5 0.5v2.5" stroke="'+primary+'" stroke-width="1.5" stroke-linecap="round"/>'
-      + '</svg>';
+  function handleMove(x) {
+    var idx = getIndex(x);
+    if (dragTarget === 'start') {
+      startIdx = Math.min(idx, endIdx);
+    } else {
+      endIdx = Math.max(idx, startIdx);
+    }
+    updateLabels();
+    draw();
+  }
 
-    var titleEl = mk('div', { fontSize:'11px', fontWeight:'700', color:textColor, letterSpacing:'0.06em', textTransform:'uppercase', flex:'1' });
-    titleEl.textContent = title;
+  function onMouseUp() {
+    isDragging = false;
+    dragTarget = null;
+    if (canvas) canvas.style.cursor = 'pointer';
+  }
 
-    var badge = mk('div', {
-      fontSize:'10px', fontWeight:'600', padding:'2px 7px', borderRadius:'20px',
-      background: hexToRgba(primary, 0.12), color: primary,
-      flexShrink:'0', display: isFiltered ? 'block' : 'none'
-    });
-    badge.textContent = 'Filtered';
+  function onApply() {
+    if (!fieldId) return;
 
-    row1.appendChild(icon);
-    row1.appendChild(titleEl);
-    row1.appendChild(badge);
-    card.appendChild(row1);
-
-    // ── Row 2: [From] [Slider] [To] [Reset] [Apply] ──────────────────────────
-    var row2 = mk('div', { display:'flex', alignItems:'center', gap:'8px', flexShrink:'0' });
-
-    function dateChip(text) {
-      var el = mk('div', {
-        fontSize:'12px', fontWeight:'600', color:textColor,
-        background: hexToRgba(primary, 0.06),
-        border: '1.5px solid ' + hexToRgba(primary, 0.2),
-        borderRadius:'7px', padding:'4px 10px',
-        whiteSpace:'nowrap', flexShrink:'0'
-      });
-      el.textContent = text;
-      return el;
+    // Build values array: [[date1], [date2], ...]
+    var values = [];
+    for (var i = startIdx; i <= endIdx; i++) {
+      values.push([dates[i].raw]);
     }
 
-    var fromChip = dateChip(fmtShort(allItems[fromIdx]));
-    var toChip   = dateChip(fmtShort(allItems[toIdx]));
+    var data = {
+      concepts: [fieldId],
+      values: values
+    };
 
-    var sliderWrap = mk('div', { flex:'1', position:'relative', minWidth:'60px', height:'32px', flexShrink:'1' });
+    dscc.sendInteraction(interactionId, FILTER, data);
 
-    var resetBtn = mk('button', {
-      fontSize:'11px', fontWeight:'500', padding:'5px 10px', borderRadius:'7px',
-      border:'1.5px solid '+border, background:'transparent', color:muted,
-      cursor:'pointer', fontFamily:'inherit', flexShrink:'0', whiteSpace:'nowrap'
-    });
-    resetBtn.textContent = 'Reset';
-
-    var applyBtn = mk('button', {
-      fontSize:'11px', fontWeight:'600', padding:'5px 13px', borderRadius:'7px',
-      border:'none', background:primary, color:'#FFFFFF',
-      cursor:'pointer', fontFamily:'inherit', flexShrink:'0', whiteSpace:'nowrap',
-      boxShadow:'0 1px 4px ' + hexToRgba(primary, 0.35)
-    });
-    applyBtn.textContent = 'Apply';
-
-    row2.appendChild(fromChip);
-    row2.appendChild(sliderWrap);
-    row2.appendChild(toChip);
-    row2.appendChild(resetBtn);
-    row2.appendChild(applyBtn);
-    card.appendChild(row2);
-
-    document.body.appendChild(card);
-
-    // ── Canvas slider ─────────────────────────────────────────────────────────
-    requestAnimationFrame(function () {
-      var sw  = sliderWrap.offsetWidth  || 200;
-      var sh  = sliderWrap.offsetHeight || 32;
-      var dpr = window.devicePixelRatio || 1;
-
-      var cv = document.createElement('canvas');
-      cv.width  = sw * dpr; cv.height = sh * dpr;
-      cv.style.cssText = 'position:absolute;top:0;left:0;width:'+sw+'px;height:'+sh+'px;cursor:grab;';
-      sliderWrap.appendChild(cv);
-
-      var ctx = cv.getContext('2d');
-      ctx.scale(dpr, dpr);
-
-      var R  = 8, TL = R+4, TW = sw - R*2 - 8, TY = sh/2, TH = 5, n = allItems.length;
-
-      function ix2x(i) { return TL + (i / Math.max(n-1,1)) * TW; }
-      function x2ix(x) { return Math.round(Math.max(0,Math.min(1,(x-TL)/TW))*(n-1)); }
-
-      function paint() {
-        ctx.clearRect(0,0,sw,sh);
-        // Track
-        roundRectPath(ctx, TL, TY-TH/2, TW, TH, TH/2);
-        ctx.fillStyle = '#E5E7EB'; ctx.fill();
-        // Active range
-        var fx = ix2x(fromIdx), tx = ix2x(toIdx);
-        roundRectPath(ctx, fx, TY-TH/2, tx-fx, TH, TH/2);
-        ctx.fillStyle = primary; ctx.fill();
-        // Ticks
-        if (n <= 60) {
-          for (var ti=0; ti<n; ti++) {
-            var inR = ti>=fromIdx && ti<=toIdx;
-            ctx.beginPath(); ctx.arc(ix2x(ti), TY, 2.5, 0, Math.PI*2);
-            ctx.fillStyle = inR ? hexToRgba(primary,0.45) : 'rgba(156,163,175,0.4)';
-            ctx.fill();
-          }
-        }
-        // Thumbs
-        [fx, tx].forEach(function(x) {
-          ctx.save();
-          ctx.shadowColor='rgba(0,0,0,0.18)'; ctx.shadowBlur=6; ctx.shadowOffsetY=2;
-          ctx.beginPath(); ctx.arc(x,TY,R,0,Math.PI*2); ctx.fillStyle='#FFFFFF'; ctx.fill();
-          ctx.restore();
-          ctx.beginPath(); ctx.arc(x,TY,R,0,Math.PI*2); ctx.strokeStyle=primary; ctx.lineWidth=2.5; ctx.stroke();
-          ctx.beginPath(); ctx.arc(x,TY,3,0,Math.PI*2); ctx.fillStyle=primary; ctx.fill();
-        });
-      }
-      paint();
-
-      // Drag
-      var dragging = null;
-      cv.addEventListener('mousedown', function(e) {
-        var rx = e.clientX - cv.getBoundingClientRect().left;
-        var dF = Math.abs(rx - ix2x(fromIdx)), dT = Math.abs(rx - ix2x(toIdx));
-        if (Math.min(dF,dT) <= R+6) { dragging = dF<=dT ? 'from':'to'; cv.style.cursor='grabbing'; e.preventDefault(); }
-      });
-      _mmHandler = function(e) {
-        if (!dragging) return;
-        var idx = x2ix(e.clientX - cv.getBoundingClientRect().left);
-        if (dragging==='from') fromIdx = Math.min(idx,toIdx);
-        else                   toIdx   = Math.max(idx,fromIdx);
-        fromChip.textContent = fmtShort(allItems[fromIdx]);
-        toChip.textContent   = fmtShort(allItems[toIdx]);
-        paint();
-      };
-      _muHandler = function() { if(dragging){ dragging=null; cv.style.cursor='grab'; } };
-      document.addEventListener('mousemove', _mmHandler);
-      document.addEventListener('mouseup',   _muHandler);
-
-      // Buttons
-      applyBtn.addEventListener('click', function() {
-        var concepts = _fieldId ? [_fieldId] : ['dateDimension'];
-        var values   = allItems.slice(fromIdx, toIdx+1).map(function(i){ return [i.raw]; });
-        try {
-          dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, { concepts: concepts, values: values });
-        } catch(e) { /* interaction not configured */ }
-        isFiltered = true;
-        badge.style.display = 'block';
-      });
-
-      resetBtn.addEventListener('click', function() {
-        fromIdx = 0; toIdx = allItems.length - 1;
-        fromChip.textContent = fmtShort(allItems[fromIdx]);
-        toChip.textContent   = fmtShort(allItems[toIdx]);
-        paint();
-        try {
-          dscc.sendInteraction('dateFilter', dscc.InteractionType.FILTER, { concepts: _fieldId ? [_fieldId] : ['dateDimension'], values: [] });
-        } catch(e) { /* interaction not configured */ }
-        isFiltered = false;
-        badge.style.display = 'none';
-      });
-    });
+    var badge = document.getElementById('filter-badge');
+    if (badge) badge.style.display = 'inline-block';
   }
 
-  // ── Error state (visible in-iframe diagnostics) ─────────────────────────────
-  function renderError(err) {
-    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
-    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
-    document.body.innerHTML = '';
-    var card = mk('div', {
-      position:'absolute', inset:'0',
-      display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center',
-      background:'#FEF2F2', border:'1px solid #FECACA', borderRadius:'12px',
-      padding:'16px', boxSizing:'border-box',
-      fontFamily:'"Plus Jakarta Sans", system-ui, sans-serif'
-    });
-    var title = mk('div', { fontSize:'11px', fontWeight:'700', color:'#991B1B', marginBottom:'6px' });
-    title.textContent = 'Date Filter Error';
-    var msg = mk('div', { fontSize:'11px', color:'#B91C1C', wordBreak:'break-word', textAlign:'center', lineHeight:'1.4' });
-    msg.textContent = String(err && err.message ? err.message : err);
-    var hint = mk('div', { fontSize:'10px', color:'#DC2626', opacity:'0.7', marginTop:'8px', textAlign:'center' });
-    hint.textContent = 'Check browser console (F12) for details. Ensure the interaction is enabled in the Setup tab.';
-    card.appendChild(title);
-    card.appendChild(msg);
-    card.appendChild(hint);
-    document.body.appendChild(card);
-    console.error('[date-filter-viz]', err);
+  function onReset() {
+    startIdx = 0;
+    endIdx = dates.length - 1;
+    updateLabels();
+    draw();
+
+    // Clear filter using clearInteraction
+    dscc.clearInteraction(interactionId, FILTER);
+
+    var badge = document.getElementById('filter-badge');
+    if (badge) badge.style.display = 'none';
   }
 
-  // ── Empty state ───────────────────────────────────────────────────────────────
-  function renderEmpty(cardBg, border, textColor, title) {
-    document.documentElement.style.cssText = 'height:100%;margin:0;padding:0;';
-    document.body.style.cssText = 'height:100%;margin:0;padding:0;overflow:hidden;background:transparent;';
-    document.body.innerHTML = '';
-    var card = mk('div', {
-      position:'absolute', inset:'0',
-      display:'flex', alignItems:'center', justifyContent:'center',
-      background:cardBg, border:'1px solid '+border, borderRadius:'12px'
-    });
-    var msg = mk('div', { fontSize:'12px', color:textColor, opacity:'0.4', textAlign:'center' });
-    msg.textContent = 'Add a Date dimension to use ' + title;
-    card.appendChild(msg);
-    document.body.appendChild(card);
-  }
-
-  // ── DOM helper — accepts style object ────────────────────────────────────────
-  function mk(tag, styles) {
-    var e = document.createElement(tag);
-    Object.keys(styles).forEach(function(k) { e.style[k] = styles[k]; });
-    return e;
-  }
-
-  // ── Boot: manual listener with error visibility ────────────────────────────
-  // dscc.subscribeToData swallows transform errors silently — if tableTransform
-  // crashes (e.g. interaction value undefined), drawViz never runs and the viz
-  // is blank with no feedback. This manual listener does the same thing but
-  // wraps everything in try/catch so errors render visually in the iframe.
-  (function boot() {
-    var cid = new URLSearchParams(window.location.search).get('dscId');
-    window.addEventListener('message', function (e) {
-      if (!e.data || e.data.type !== 'RENDER') return;
-      try {
-        var data = dscc.tableTransform(e.data);
-        drawViz(data);
-      } catch (err) {
-        renderError(err);
-      }
-    });
-    window.parent.postMessage({ componentId: cid, type: 'vizReady' }, '*');
-  })();
+  // Subscribe to Looker Studio data
+  dscc.subscribeToData(init, { transform: dscc.objectTransform });
 
 })();
